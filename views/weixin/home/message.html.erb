@@ -1,0 +1,33 @@
+<div class="wx-message" id="wx-message">
+	<div class="wx-message-body">
+		<ul data-bind="foreach: messages" data-type="recieved">
+			<li class="clearfix" data-bind="css:{'isRead': recieverMessageRead}, attr:{'data-messageId': id}">
+				<input type="checkbox"/>
+				<p class="wx-message-sender" data-bind="text: (sendType ? '&nbsp;&nbsp;收件人:&nbsp;' : '&nbsp;&nbsp;发件人:&nbsp;') + messageName"></p>
+				<p class="wx-message-tittle" data-bind="text: '&nbsp;&nbsp;主题:&nbsp;'+messageTitle"></p>
+				<p class="wx-message-time" data-bind="text: messageTime"></p>
+			</li>
+		</ul>
+		<div class="wx-newMessage">
+			<form id="wx-messageForm" class="wx-messageForm">
+					<input type="text" class="form-control" placeholder="发送至:" name="recievers"/>
+					<input type="text" class="form-control" placeholder="主题:" name="subject"/>
+					<textarea class="form-control" placeholder="说点什么..." name="content"></textarea>
+			</form>
+		</div>
+		<div class="wx-messageContent">
+			<div>
+				<p>主题:</p>
+				<p data-bind="text: subject"></p>
+			</div>
+			<div>
+				<p data-bind="text: (isSend()) ? '收件人:' : '发件人:' "></p>
+				<p data-bind="text: name"></p>
+			</div>
+			<div>
+				<p></p>
+				<p data-bind="text: content"></p>
+			</div>
+		</div>
+	</div>
+</div>

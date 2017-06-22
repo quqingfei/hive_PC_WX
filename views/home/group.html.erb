@@ -1,0 +1,271 @@
+<% content_for :title, '设备分组' %>
+<div class="page-content" id="hive-page-content-group">
+   <%= render "shared/page_breadcrumb", icon: 'fa-tag' %>
+   <div class="row hive-group-section hide">
+   	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 header">
+   		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cell">
+   			<i class="fa fa-info-circle"></i>
+   			<span>分组信息</span>
+   		</div>
+   		<div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 pull-right">
+   			<div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 pull-right cell text-center hive-group-openBtn" data-status="close">
+   				&nu;展开
+   			</div>
+   			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pull-right hive-group-newBtn cell text-center">
+   				+ 新建分组
+   			</div>
+   		</div>
+   	</div>
+   	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hive-group-newForm">
+      <div>
+        <form id="hive-device-form">
+          <ul class="hive-device-formBodyContent">
+            <li>
+              <div>
+                <i class="fa fa-stop"></i>
+              </div>
+            </li>
+            <li>
+              <div class="hive-device-formBodyContent-formLeft">
+                <div class="input-icon right">
+                  <i class="fa" data-toggle="tooltip" title=""></i>
+                  <input type="text" id="hive-group-newForm-groupName" name="hive-group-newForm-groupName" class="form-control" id="hive-group-newForm-groupName" placeholder="新分组名称"/>
+                </div>
+                <div class="input-icon right">
+                  <i class="fa" data-toggle="tooltip" title=""></i>
+                  <input id="hive-group-newForm-description" name="hive-group-newForm-description" type="text" class="form-control"  placeholder="备注"/>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="hive-device-formBodyContent-formMiddle">
+                <div class="hive-device-lineBox">
+                  <div></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="hive-device-formBodyContent-formRight">
+                <div>
+                  <div class="input-icon right">
+                    <i class="fa" data-toggle="tooltip" title=""></i>
+                    <input type="text" id="hive-group-newForm-managerName" name="hive-group-newForm-managerName" class="form-control" placeholder="管理员帐号"/>
+                  </div>
+                  <div class="input-icon right">
+                    <i class="fa" data-toggle="tooltip" title=""></i>
+                    <input type="password" id="hive-group-newForm-managerPwd" name="hive-group-newForm-managerPwd" class="form-control" placeholder="管理员密码"/>
+                  </div>
+                  <div class="hive-quick-clear"></div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <i class="fa fa-question-circle" data-toggle="tooltip" title="此账号用于用户登录"></i>
+              </div>
+            </li>
+            <li>
+              <div class="input-icon right">
+                <i class="fa" data-toggle="tooltip" title=""></i>
+                <input type="text" id="hive-group-newForm-managerFullName" name="hive-group-newForm-managerFullName" class="form-control" placeholder="管理员姓名"/>
+              </div>
+            </li>
+            <li>
+              <div class="input-icon right">
+                <i class="fa" data-toggle="tooltip" title=""></i>
+                <input type="text" id="hive-group-newForm-managerPhone" name="hive-group-newForm-managerPhone" class="form-control" placeholder="管理员电话"/>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <div class="hive-quick-clear"></div>
+      <div class="hive-group-newForm-btnArea">
+        <hr />
+        <input id="hive-group-createBtn" class="btn" type="button" value="确定" />
+        &nbsp;&nbsp;
+        <input id="hive-group-cancelBtn" class="btn" type="button" value="取消" />
+      </div>
+      <div>
+      <div class="hive-quick-clear"></div>
+    </div>
+   	</div>
+   	<div id="hive-group-list" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hive-group-list">
+   	</div>
+   </div>
+   <br/>
+   <br/>
+   <div class="row hive-table">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="hive-sortable" data-sortType="name">
+              设备名称
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="temp">
+              温度
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="hum">
+              湿度
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="shake">
+              震动
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="ray">
+              人流
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable hide" data-sortType="energy">
+              能耗
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="location">
+              位置
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th>影像</th>
+            <th>网络</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="hive-devices-tbody">
+        </tbody>
+      </table>
+      <table class="table table-footer hide">
+      <tr>
+        <td style="width: 7%" id="hive-select-all"><a>全选</a></td>
+        <td style="width: 8%" id="hive-select-cancel"><a>取消选择</a></td>
+        <td style="width: 12%" id="hive-devices-selected-display">已选择<span>0</span>项</td>
+        <td style="width: 7%" id="hive-assign-list-descriptionText">设置为：</td>
+        <td id="hive-assign-gList">
+
+        </td>
+      </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <textarea id="hive-group-tmpl" style="display: none;">
+      {#foreach $T.items as d}
+        <div class="col-xs-6 col-md-3" id="hive-group-id-{$T.d.id}">
+          <div class="grid-cell" style="background-color: {$T.d.color};">
+            <div class="grid-cell-content">
+              <h4 class="hive-single-group-name">{$T.d.name}</h4>
+              <table class="table">
+                <tr>
+                  <td>
+                    设备数：
+                  </td>
+                  <td class="hive-single-group-devices">
+                    {$T.d.num} ({$T.d.percent}%)
+                  </td>
+                </tr>
+              </table>
+              <table class="table">
+                <tr>
+                  <td>
+                    管理员：
+                  </td>
+                  <td class="hive-single-group-managerName">
+                    {$T.d.manager.name}
+                  </td>
+                </tr>
+              </table>
+              <table class="table">
+                <tr>
+                  <td>
+                    电话：
+                  </td>
+                  <td class="hive-single-group-managerPhone">
+                    {$T.d.manager.phone}
+                  </td>
+                </tr>
+              </table>
+              <table class="table">
+                <tr>
+                  <td>
+                    备注：
+                  </td>
+                  <td class="hive-single-group-description">
+                    {$T.d.description}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="grid-cell-editBar">
+            <span>
+              <i class="fa fa-pencil"></i>
+              <a href="javascript:void(0)" data-groupId="{$T.d.id}" data-action="edit">编辑</a>
+            </span>
+            &nbsp;&nbsp;
+            <span>
+              <i class="fa fa-times"></i>
+              <a href="javascript:void(0)" data-groupId="{$T.d.id}" data-action="delete">删除</a>
+            </span>
+          </div>
+        </div>
+      {#/for}
+   </textarea>
+   <textarea id="hive-devices-tmpl" style="display: none;">
+      {#foreach $T.items as d}
+        <tr data-deviceId="{$T.d.id}" class={#if ($T.d.hasWarning == true)}"hive-table-rowWarning"{#else}""{#/if}>
+          <td>
+            <span class={#if ($T.d.color != "")}"groupMarker"{#else}"groupMarker hide"{#/if} style="background-color: {$T.d.color};"></span>
+            {#if $T.d.noCheckbox == false}
+            <input value="{$T.d.id}" type="checkbox" {#if ($T.d.color != "")}disabled="disabled"{#else}""{#/if} />
+            {#/if}
+            {$T.d.name}
+          </td>
+          <td class={#if ($T.d.temperatureWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.humitures[0].temperature}
+            <i class={#if ($T.d.temperaturePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.humidityWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.humitures[0].humidity}
+            <i class={#if ($T.d.temperaturePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.shakeWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.shakes[0].shake}
+            <i class={#if ($T.d.shakePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.rayWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.rays[0].count}
+            <i class={#if ($T.d.rayPower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.energyWarn == true)}"hive-table-cellWarning hide"{#else}"hide"{#/if}>
+            {$T.d.energy.energy}
+          </td>
+          <td class={#if ($T.d.locationWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.location.address}
+          </td>
+          <td class={#if ($T.d.picWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.pictureStatus}
+            <i class={#if ($T.d.picturePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.netWorkWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.networkStatus}
+          </td>
+          <td>
+            <span>
+              <i class="fa"></i>
+              <a href="javascript:void(0);" class="hive-devices-switch" data-switch="{$T.d.off}">{#if ($T.d.off == true)} 开 {#else} 关 {#/if}</a>
+              <i class="fa fa-times"></i>
+              <a href="javascript:void(0);" class="hive-devices-deleteLink">删除</a>
+            </span>
+          </td>
+        </tr>
+      {#/for}
+    </textarea>
+</div>

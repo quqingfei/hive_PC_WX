@@ -1,0 +1,181 @@
+<% content_for :title, '首页' %>
+<div class="page-content">
+      <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+      <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+               Widget settings form goes here
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn blue">Save changes</button>
+              <button type="button" class="btn default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= render "shared/page_breadcrumb", icon: 'fa-list' %>
+
+      <%= render "shared/device_summary" %>
+
+      <!-- END DASHBOARD STATS -->
+      <div class="row clearfix">
+        <div class="col-md-6 col-sm-6">
+          <!-- BEGIN PORTLET-->
+          <div class="portlet light hive-porlet-img">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-bar-chart font-green-sharp hide"></i>
+                <i class="icon-icon-06"></i>
+                <span class="caption-subject">摄像头</span>
+                <span class="caption-subject pull-right hive-index-time"></span>
+              </div>
+              
+            </div>
+            <div class="portlet-body">
+              <div class="device-image" id="index-device-image" style="height: 228px;"></div>
+            </div>
+            <div class="hive-index-imageNum"></div>
+          </div>
+          <!-- END PORTLET-->
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <!-- BEGIN PORTLET-->
+          <div class="portlet light ">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-icon-03"></i>
+                <span class="caption-subject">位置分布</span>
+                <div class="chart-options pull-right">
+                  <span data-chartOption="location-province">省</span>
+                  <span data-chartOption="location-city" class="chart-option-actived">市</span>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="position-distribution-content">
+                <div id="position-distribution" style="height: 228px;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END PORTLET-->
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="portlet light ">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-icon-04"></i>
+                <span class="caption-subject">温度</span>
+                <div class="chart-options pull-right hive-clear-error">
+                  <span data-chartOption="temp-day">天</span>
+                  <span data-chartOption="temp-hour" class="chart-option-actived">时</span>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="temperature-content">
+                <div id="temperature" style="height: 228px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="portlet light ">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-icon-04"></i>
+                <span class="caption-subject">湿度</span>
+                 <div class="chart-options pull-right">
+                  <span data-chartOption="hum-day">天</span>
+                  <span data-chartOption="hum-hour" class="chart-option-actived">时</span>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="chart-humiture-content">
+                <div id="chart-humiture" style="height: 228px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 hidden">
+          <div class="portlet light ">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-icon-08"></i>
+                <span class="caption-subject">能耗</span>
+                 <div class="chart-options pull-right hive-clear-error">
+                  <span data-chartOption="energy-day">天</span>
+                  <span data-chartOption="energy-hour" class="chart-option-actived">时</span>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="energy-consumption-content">
+                <div id="energy-consumption" style="height: 228px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="portlet light ">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="fa icon-icon-07"></i>
+                <span class="caption-subject">人流感应</span>
+                 <div class="chart-options pull-right">
+                  <span data-chartOption="ray-day">天</span>
+                  <span data-chartOption="ray-hour" class="chart-option-actived">时</span>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="chart-ray-content">
+                <div id="chart-ray" style="height: 228px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="portlet light tasks-widget">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="icon-icon-05"></i>
+                <span class="caption-subject">震动感应</span>
+                 <div class="chart-options pull-right hive-clear-error">
+                  <span data-chartOption="shake-day">天</span>
+                  <span data-chartOption="shake-hour" class="chart-option-actived">时</span>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div id="shaking-content">
+                <div id="shaking" style="height: 228px;">
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<% content_for :title, '地理位置' %>
+<div class="page-content">
+	<%= render "shared/page_breadcrumb", icon: 'icon-icon-03'%>
+	<div class="hive-map">
+		<div class="hive-map-header">
+			<span id="hive-map-currentAreaName" class="hive-map-span1">全国</span>
+			<span id="hive-map-all" class="hive-map-span2 hive-map-span-actived">全部</span>
+			<span id="hive-map-unNormal" class="hive-map-span3">异常</span>
+		</div>
+	  	<div id="mapContainer" class="hive-map-body"></div> 
+	  </div>
+	</div>
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=b1bc1302c9bc2806eefb6a17a6e3bcad"></script>
+</div>

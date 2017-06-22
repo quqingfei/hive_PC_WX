@@ -1,0 +1,126 @@
+<div class="wx-leftside" id="wx-leftside">
+	<div class="wx-leftside-header">
+		<div class="leftside-header">
+			<div class="leftside-circle user-circle">
+				<i class="fa fa-user"></i>
+			</div>
+			<div class="leftside-circle message-circle hive-theme-backgroundColor">
+				<a href="/weixin/message" target="_parent"><i class="icon-envelope"></i></a>
+				<div class="wx-messageAlarm"></div>
+			</div>
+			<div class="leftside-profile">
+				<p><%= current_user.full_name %></p>
+				<p><%= current_user.email %></p>
+			</div>
+			<i class="fa fa-angle-down leftside-angle-down"></i>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="wx-leftside-body">
+		<a href="/weixin" target="_parent">
+			<div class="leftside-deviceNum leftside-deviceList">
+				<span><i class="fa fa-tablet"></i></span>
+				<span>设备总数</span>
+				<span data-bind="text: allDeviceNum"></span>
+			</div>
+		</a>
+		<a href="/weixin?type=online" target="_parent">
+			<div class="leftside-onlineDevice leftside-deviceList">
+				<span><i class="fa fa-tablet"></i></span>
+				<span>在线设备</span>
+				<span data-bind="text: onlineDeviceNum"></span>
+			</div>
+		</a>
+		<a href="/weixin?type=offline" target="_parent">
+			<div class="leftside-abnormalDevice leftside-deviceList">
+				<span><i class="fa fa-tablet"></i></span>
+				<span>异常设备</span>
+				<span data-bind="text: errorDeviceNum"></span>
+			</div>
+		</a>
+		<a href="/weixin/newDevice" target="_parent">
+			<div class="leftside-addDevice leftside-deviceList hive-theme-backgroundColor">
+				<span><i class="fa fa-tablet"></i></span>
+				<span>添加设备</span>
+				<span>+</span>
+			</div>
+		</a>
+		<div>
+			<ul class="leftside-nav">
+				<a href="/weixin/map" target="_parent">
+					<li id="wx-ls-map">
+							<span><i class="icon-icon-03"></i></span>
+							<span>地理位置</span>
+							<span></span>
+					</li>
+				</a>
+				<a href="/weixin/temperature" target="_parent">
+					<li id="wx-ls-temp">
+						<span><i class="icon-icon-04"></i></span>
+						<span>温湿度</span>
+						<span data-bind="text: humitureAlarm">0</span>
+					</li>
+				</a>
+				<a href="/weixin/ray" target="_parent">
+					<li id="wx-ls-ray">
+						<span><i class="icon-icon-07"></i></span>
+						<span>人流感应</span>
+						<span></span>
+					</li>
+				</a>
+				<a href="/weixin/shake" target="_parent">
+					<li id="wx-ls-shake">
+						<span><i class="icon-icon-05"></i></span>
+						<span>震动</span>
+						<span data-bind="text: shakeAlarm">0</span>
+					</li>
+				</a>
+				<a href="/weixin/image" target="_parent">
+					<li id="wx-ls-image">
+						<span><i class="icon-icon-06"></i></span>
+						<span>影像</span>
+						<span></span>
+					</li>
+				</a>
+				<a href="/weixin/energy" target="_parent" class="hidden">
+					<li id="wx-ls-energy">	
+						<span><i class="icon-icon-08"></i></span>
+						<span>能耗</span>
+						<span data-bind="text: energyAlarm">0</span>
+					</li>
+				</a>
+				<a href="/weixin/inspection" target="_parent">
+					<li id="wx-ls-inspection">	
+						<span><i class="icon-icon-09"></i></span>
+						<span>巡检</span>
+					</li>
+				</a>
+			</ul>
+		</div>
+		<div>
+			<div class="leftside-group">设备分组</div>
+			<ul class="leftside-nav" data-bind="foreach: group">
+				<a target="_parent" data-bind="attr: {href: url}">
+					<li>
+						<span><i class="fa fa-bookmark leftside-rotate"></i></span>
+						<span data-bind="text: name"></span>
+					</li>
+				</a>
+			</ul>
+		</div>
+		<div>
+			<ul class="leftside-nav">
+				<a href="/weixin/settings" target="_parent">
+					<li>
+						<span><i class="fa fa-gear"></i></span>
+						<span>设置</span>
+					</li>
+				</a>
+				<li>
+					<span><i class="fa fa-question-circle"></i></span>
+					<span>Help & feedback</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

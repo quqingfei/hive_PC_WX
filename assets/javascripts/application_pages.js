@@ -1,0 +1,16 @@
+//= require pages/pc/index
+//= require pages/pc/devices
+//= require pages/pc/map
+//= require pages/pc/humiture
+//= require pages/pc/shake
+//= require pages/pc/picture
+//= require pages/pc/energy
+//= require pages/pc/ray
+//= require pages/pc/group
+//= require pages/pc/new_device
+//= require pages/pc/inbox
+//= require pages/pc/search
+//= require pages/pc/user_center
+//= require pages/pc/settings
+//= require pages/pc/inspection
+//= require turbolinks

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8"/>
+    <title>大黄蜂 - 冰柜管理系统</title>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <%= stylesheet_link_tag 'weixin_application', media: 'all', 'data-turbolinks-track' => false %>
+    <% if current_user.setting.theme != "default" %>
+      <%= stylesheet_link_tag ('themes/hive-theme-' + current_user.setting.theme), media: 'all', 'data-turbolinks-track' => false %>
+    <% end %>
+    <%= javascript_include_tag 'weixin_application', 'data-turbolinks-track' => false %>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=b1bc1302c9bc2806eefb6a17a6e3bcad"></script>
+  </head>
+
+  <body>
+    <nav class="hive-weixin-topbar" id="hive-weixin-topbar">
+      <div>
+        <i class="fa fa-reorder pull-left navbar-mainToggle navbar-toggle" data-bind="event:{click: detailsToggleOpenClick}"></i>
+        <a class="navbar-brand" href="#">Hive</a>
+        <input class="form-control wx-searchInput" type="text" />
+        <i class="fa fa-book pull-right wx-nav-list navbar-toggle"></i>
+        <i class="fa fa-coffee pull-right wx-nav-QRcode navbar-toggle"></i>
+        <i class="fa fa-search pull-right wx-nav-search navbar-toggle"></i>
+      </div>
+      <div class="wx-toplist">
+        <ul data-bind="foreach: lists">
+          <li data-bind="text: listName, attr:{'data-type': listNum}, click: $root.bindListClick, css:{'font-black': listNum == 1}"></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- BEGIN BLACK -->
+      <div class="wx-black"></div>
+    <!-- END BLACK -->
+    <!-- END HEADER -->
+
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+
+      <!-- BEGIN CONTENT -->
+      <div class="page-content-wrapper">
+        <%= yield %>
+      </div>
+      <div id="hive-wx-routineBtn" class="inspection-inspect" style="display:none;">立即巡检</div>
+      <div id="hive-wx-routineBtns" class="inspection-inspect" style="display:none;">
+        <div id="hive-wx-reRoutineBtn">重新扫描</div>
+        <div id="hive-wx-finishRoutineBtn">完成</div>
+      </div>
+      <div id="hive-wx-messageBtn" class="messageBtns" style="display:none;">
+        <div id="wx-message-isRead">已读</div>
+        <div id="wx-message-delete">删除</div>
+      </div>
+      <div id="hive-wx-messageSendBtn" class="messageSendBtn" style="display:none;">
+        发送
+      </div>
+      <div class="wx-newDevice-confirm" style="display:none;">
+        <div>取消</div>
+        <div>添加</div>
+      </div>
+      <div class="wx-settings-confirm" style="display:none;">
+        设置
+      </div>
+      <!-- END CONTENT -->
+      <!-- BEGIN QUICK SIDEBAR -->
+      <%= render "shared/page_weixin_left_side_bar" %>
+      <%= render "shared/page_weixin_device_details" %>
+      <%= render "shared/page_weixin_device_chart" %>
+      <div class="quick-sidebar-blackbox"></div>
+      <!-- END QUICK SIDEBAR -->
+    </div>
+    <!-- END CONTAINER -->
+    <input type="hidden" id="hive-settings" value="<%= @settings %>"/>
+    <input type="hidden" id="hive-current-date" value="<%= @current_date_time %>" />
+  </body>
+</html>

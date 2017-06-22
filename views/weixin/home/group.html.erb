@@ -1,0 +1,44 @@
+<div class="wx-group" id="wx-group">
+	<div class="wx-group-body">
+		<div class="wx-group-info">
+			<i class="fa fa-bookmark leftside-rotate"></i>
+			<div>
+				<h1 class="wx-group-infoName" data-bind="text: groupName"></h1>
+			</div>
+			<div>
+				<label>设备数:</label>
+				<label data-bind="text: deviceNum"></label>
+			</div>
+			<div>
+				<label>管理员:</label>
+				<label data-bind="text: groupManager"></label>
+			</div>
+			<div>
+				<label>电话:</label>
+				<label data-bind="text: groupPhone"></label>
+			</div>
+			<div>
+				<label>备注:</label>
+				<label data-bind="text: groupDescription"></label>
+			</div>
+			<div class="wx-group-phone">
+				<a href="tel:18824867926"><i class="fa fa-phone"></i></a>
+			</div>
+		</div>
+		<div class="wx-group-list">
+			<ul data-bind="foreach: devices">
+				<li class="clearfix wx-theme-borderColor" data-bind="css: {'error-device' : isError || isCheck}, click: $root.gridClick">
+					<span>
+						<p data-bind="text: name"></p>
+						<p data-bind="text: address"></p>
+						<p data-bind="text: status, css: { 'error-font': isError}"></p>
+					</span>
+					<span>
+						<p data-bind="text: isCheck  ? '已巡检' : '未巡检', css: { 'error-font': !isCheck }"></p>
+						<p data-bind="text: isCheck ? checkTime : '' "></p>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

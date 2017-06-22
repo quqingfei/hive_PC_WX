@@ -1,0 +1,214 @@
+<div class="page-quick-sidebar" data-current-selected="">
+  <div class="nav-justified">
+    <h1 class="hive-quick-deviceName">-</h1>
+      <div class="row status-info">
+        <div class="col-md-6 col-sm-6">
+          <div class="temperature-stat hive-grid-cell" data-target="temp">
+            <a id="temperatrue-chart-click">
+              <i class="icon-icon-04"></i>
+            </a>
+            <div class="details">
+              <div class="hive-quick-numberBox">
+                 <div class="hive-quick-temperature">
+                  <div class="hive-quick-number">-</div>
+                  <div class="hive-quick-desc">温度(℃)</div>
+                 </div>
+                 <div class="hive-quick-symbol hive-quick-number">&</div>
+                 <div class="hive-quick-humiture">
+                   <div class="hive-quick-number">-</div>
+                   <div class="hive-quick-desc">湿度(%)</div>
+                 </div>
+              </div>
+            </div>
+            <i class="hive-icon-battery-left fa fa-bolt"></i>
+          </div>
+          <div class="shaking-stat hive-grid-cell" data-target="shake">
+            <a id="shaking-chart-click">
+              <i class="icon-icon-05"></i>
+            </a>
+            <div class="details">
+              <div class="number hive-quick-number">
+                 -
+              </div>
+              <div class="desc">
+                 震动(次/小时)
+              </div>
+            </div>
+            <i class="hive-icon-battery-left fa fa-bolt"></i>             
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="ray-stat hive-grid-cell" data-target="ray">
+            <a id="flowRate-chart-click">
+              <i class="icon-icon-07"></i>
+            </a>
+            <div class="details">
+              <div class="number hive-quick-number">
+                -
+              </div>
+              <div class="desc">
+                人流(人/小时)
+              </div>
+            </div>
+            <i class="hive-icon-battery-left fa fa-bolt"></i>              
+          </div>
+          <div class="energry-consumption-stat hidden hive-grid-cell" data-target="energy">
+            <a id="energyComsumption-chart-click">
+              <i class="icon-icon-08"></i>
+            </a>
+            <div class="details">
+              <div class="number hive-quick-number">
+                 -
+              </div>
+              <div class="desc">
+                 能耗(kw/h)
+              </div>
+            </div>          
+          </div>
+        </div>
+      </div>
+    <div class="row stat-chart image-stat" data-target="image">
+        <div class="col-md-12 col-sm-12">
+          <div class="portlet light stat-chart-delete hive-porlet-img">
+            <div class="portlet-title hive-porlet-img-title">
+              <div class="caption">
+                <i class="icon-icon-06"></i>
+                <span class="caption-subject">影像</span>
+                <span class="hive-date-right"></span>
+              </div>   
+            </div>
+            <div class="portlet-body">
+              <img class="device-image" alt="暂无图片"/>
+            </div>
+          </div>
+      </div>
+    </div>
+      <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=b1bc1302c9bc2806eefb6a17a6e3bcad"></script>
+    <div class="row stat-map location-stat" data-target="map">
+      <div class="col-md-12 col-sm-12">
+        <div class="portlet light ">
+          <div class="portlet-title" >
+            <div class="caption">
+              <i class="icon-icon-03"></i>
+              <span class="caption-subject">地理位置</span>
+              <span class="hive-date-right"></span>
+            </div>  
+          </div>
+          <div class="portlet-body">
+            <div class="hive-details-map-cover"></div>
+            <div id="stat-mapContainer">
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="hive-quick-form">
+      <div class="hive-quick-form-left">
+        <img src="<%= asset_path("icon-12.svg") %>" class="hive-icon-mainSn icon-icon-10">
+        <div class="input-icon right">
+          <input type="text" class="form-control hive-quick-sn" id="slug-sn" disabled="disabled"/>
+        </div>
+        <div class="input-icon right">
+          <input type="text" class="form-control" id="slug-name"/>
+        </div>
+        <div class="input-icon right">
+          <input type="text" class="form-control hive-quick-description" placeholder="备注" id="slug-description" />
+        </div>
+        <div>
+          <select id="quick-device-groups" class="form-control">
+            <option value="">无分组</option>
+          </select>
+        </div>
+        <div class="input-icon right">
+          <input type="text" class="form-control" placeholder="管理员" id="groupManager" disabled="disabled"/>
+        </div>
+        <div class="input-icon right">
+          <input type="text" class="form-control" placeholder="电话" id="groupPhone" disabled="disabled"/>
+        </div>
+      </div>
+      <div class="hive-quick-form-middle">
+        <div class="hive-quick-form-line">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="hive-quick-form-right">
+        <div>
+          <div class="input-icon right">
+            <i class="icon-icon-04 hive-quick-first-icon"></i>
+            <i class="fa tooltips" title="" data-toggle="tooltip"></i>
+            <input type="text" class="form-control hive-quick-sn" id="temp-sn" data-snType="温湿度蜂巢" placeholder="设备序列号"/>
+          </div>
+          <div class="input-icon right">
+            <i class="fa fa-minus hive-quick-first-icon"></i>
+            <input type="text" id="temp-description" class="form-control hive-quick-description" placeholder="备注"/>
+          </div>
+          <div class="hive-quick-clear"></div>
+        </div>
+        <div>
+          <div class="input-icon right">
+            <i class="icon-icon-05 hive-quick-first-icon"></i>
+            <i class="fa tooltips" title="" data-toggle="tooltip"></i>
+            <input type="text" id="speed-sn" class="form-control hive-quick-sn" data-snType="加速度蜂巢" placeholder="设备序列号"/>
+          </div>
+          <div class="input-icon right">
+            <i class="fa fa-minus hive-quick-first-icon"></i>
+            <input type="text" placeholder="备注" id="speed-description" class="form-control hive-quick-description"/>
+          </div>
+          <div class="hive-quick-clear"></div>
+        </div>
+        <div>
+          <div class="input-icon right">
+            <i class="icon-icon-06 hive-quick-first-icon"></i>
+            <i class="fa tooltips" title="" data-toggle="tooltip"></i>
+            <input type="text" id="image-sn" class="hive-quick-sn form-control" data-snType="摄像头蜂巢" placeholder="设备序列号"/>
+          </div>
+          <div class="input-icon right">
+            <i class="fa fa-minus hive-quick-first-icon"></i>
+            <input type="text" placeholder="备注" id="image-description" class="hive-quick-description form-control" />
+          </div>
+          <div class="hive-quick-clear"></div>
+        </div>
+        <div>
+          <div class="input-icon right">
+            <i class="icon-icon-07 hive-quick-first-icon"></i>
+            <i class="fa tooltips" title="" data-toggle="tooltip"></i>
+            <input type="text" id="ray-sn" class="hive-quick-sn form-control" data-snType="红外线蜂巢" placeholder="设备序列号"/>
+          </div>
+          <div class="input-icon right">
+            <i class="fa fa-minus hive-quick-first-icon"></i>
+            <input type="text" placeholder="备注" id="ray-description" class="hive-quick-description form-control" />
+          </div>
+          <div class="hive-quick-clear"></div>
+        </div>
+        <div class="quick-modal-hide">
+          <div class="input-icon right">
+            <i class="fa fa-spinner fa-spin hive-quick-first-icon"></i>
+            <i class="fa tooltips" title="" data-toggle="tooltip"></i>
+            <input type="text" class="form-control" placeholder="设备序列号"/>
+          </div>
+          <div class="input-icon right">
+            <i class="fa fa-minus hive-quick-first-icon"></i>
+            <input type="text" placeholder="备注" class="form-control"/>
+          </div>
+          <div class="hive-quick-clear"></div>
+        </div>
+        <div class="hive-quick-add">
+          <i class="fa fa-plus quick-icon-add"></i>
+        </div>
+      </div>
+      <div class="hive-quick-clear"></div>
+    </div>
+    <hr />
+    <div class="hive-quick-confirm">
+      <input type="button" class="hive-quick-confirm-save" value="确认" />
+      &nbsp;
+      <input type="button" class="hive-quick-confirm-cancel" value="取消" />
+    </div>
+  </div>
+</div>
+
+

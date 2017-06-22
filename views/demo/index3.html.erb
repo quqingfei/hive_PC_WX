@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>震动检查</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #BBB;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        html {
+            /*font-size: 100%;*/
+            width: 100%;
+            height: 100%;
+        }
+
+        .div-speed {
+            background-color: #FFCC00;
+            transition: 2s;
+        }
+
+                .hexagon, .red {
+          position: relative;
+          width: 300px; 
+          height: 173.21px;
+          background-color: #FFD70D;
+          margin: 86.60px 0;
+        }
+
+        .red {
+            background-color: Red;
+        }
+
+        .hexagon:before,
+        .hexagon:after,
+        .red:before,
+        .red:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          border-left: 150px solid transparent;
+          border-right: 150px solid transparent;
+        }
+
+        .hexagon:before {
+          bottom: 100%;
+          border-bottom: 86.60px solid #FFD70D;
+        }
+
+        .hexagon:after {
+          top: 100%;
+          width: 0;
+          border-top: 86.60px solid #FFD70D;
+        }
+
+        .red:before {
+          bottom: 100%;
+          border-bottom: 86.60px solid Red;
+        }
+
+        .red:after {
+          top: 100%;
+          width: 0;
+          border-top: 86.60px solid Red;
+        }
+
+        div.container {
+            left: 50%;
+            position: absolute;
+            margin-top: 0px;
+            margin-left: -150px;
+        }        
+
+
+        p {
+            font-family: "方正舒体", Geneva, Arial, Helvetica, sans-serif;
+            text-align: center;
+            /*color: white;*/
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        hr {
+            height: 2px;
+            border: none;
+            border-top: 2px solid burlywood;
+        }
+
+        .p-speed {
+            margin-top: 100px;
+            padding-top: 60px;
+        }
+
+
+        @media (min-width: 640px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1360px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            p {
+                font-size: 24px;
+            }
+        }
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        function connect() {
+
+             $.ajax({
+                 type: "GET",
+                 url: "/demo/shake?t=" + encodeURI(new Date()),
+                 data: {},
+                 dataType: "json",
+                 success: function (data) {
+                     if (!data) {
+                         data = { count: 0, time: '' };
+                     }
+ 
+                     change(data.result.count, data.result.time);
+                     setTimeout(connect, 1000);
+                 }
+             });
+        }
+
+        function change(speed, time) {
+            $('#speed').animate({ opacity: 0.1 }, function () {
+                if(speed > 5) {
+                    $("#hexagon").addClass('red');
+                    $("#hexagon").removeClass('hexagon');
+                } else {
+                    $("#hexagon").addClass('hexagon');
+                    $("#hexagon").removeClass('red');
+                }
+
+                $('#speed').html(speed);
+                $('#speed').css('opacity', 1);
+                $("#time").html(time);
+            });
+        }
+        $(document).ready(function () {
+            connect();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="div-speed hexagon" id="hexagon">
+            <p class="p-speed">
+                <span id="time"></span><br/>
+                当前震动次数:&nbsp;&nbsp;<span id="speed"></span></p>
+        </div>
+    </div>
+</body>
+</html>

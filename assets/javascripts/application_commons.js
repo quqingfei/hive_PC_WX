@@ -1,0 +1,17 @@
+//= require extensions/util
+//= require commons/pc/common
+//= require commons/validation
+//= require commons/service
+//= require commons/auto_query
+//= require commons/picturesLoader
+//= require commons/pc/device_summary
+//= require commons/pc/menuBar
+//= require commons/map
+//= require commons/pc/device_details
+//= require commons/pc/notification
+//= require commons/pc/bgDetailsBar
+//= require commons/high_charts
+//= require commons/initchart
+//= require commons/pc/page_sort
+//= require extensions/jquery.validate.extensions
+//= require turbolinks

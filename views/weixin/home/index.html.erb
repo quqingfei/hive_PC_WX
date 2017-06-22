@@ -1,0 +1,13 @@
+<div class="wx-index" id="wx-index">
+	<ul data-bind="foreach: devices">
+		<li class="clearfix wx-theme-borderColor" data-bind="css: {'error-device' : isError}, click: $root.gridClick">
+			<span>
+				<p data-bind="text: name"></p>
+				<p data-bind="text: address"></p>
+			</span>
+			<span>
+				<p data-bind="text: status, css: { 'error-font': isError}"></p>
+			</span>
+		</li>
+	</ul>
+</div>

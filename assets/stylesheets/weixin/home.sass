@@ -1,0 +1,866 @@
+// Place all the styles related to the weixin::home controller here.
+// They will automatically be included in application.css.
+// You can use Sass here: http://sass-lang.com/
+
+// weixin start
+html,body,.page-container,.page-content-wrapper
+	height: 100%
+.page-content-wrapper
+	position: fixed
+	transition: 0.4s ease
+	-moz-transition: 0.4s ease
+	-webkit-transition: 0.4s ease
+	-o-transition: 0.4s ease
+	top: 0px
+	right: 0px
+	width: 100%
+	height: 100%
+	overflow-y: scroll
+	&.page-content-wrapper-hide
+		right: 100%
+	& > div
+		padding-top: 50px
+.hive-grid-row
+	margin: 0px
+	text-align: center
+	& i
+		position: absolute
+		top: 10px
+		right: 10px
+		color: #FFF
+.hive-grid-col
+	padding: 1px
+	position: relative
+.hive-grid-cell
+	width: 100%
+	height: 100%
+	background-color: #FFCC00
+	background-repeat: no-repeat
+	text-align: center
+	height: 110px
+	& > div:last-child
+		position: relative
+		top: 8px
+.hive-grid-cell:hover *
+	cursor: pointer
+.cell-red
+	background-color: #DB5323 !important
+.cell-label
+	margin-top: 0px
+	color: #FFF
+	font-family: Arial Narrow
+	font-weight: 100
+
+.cell-labelText
+	font-size: 24px
+
+.cell-label-symbol
+	font-size: 1.1em
+	padding: 0px !important
+	color: #FFF
+
+.cell-name 
+	color: white
+	font-weight: 100
+	font-family: Arial Narrow
+	text-align: left
+	padding-left: 7px
+	padding-top: 7px
+	letter-spacing: 1px
+	margin-bottom: 4px
+.hive-picture-cell
+	width: 100%
+	height: 110px
+
+.wx-black
+	transition: 0.3s ease
+	-moz-transition: 0.3s ease
+	-webkit-transition: 0.3s ease
+	-o-transition: 0.3s ease
+	opacity: 0
+.wx-black-show
+	z-index: 10001
+	background-color: black
+	opacity: 0.5
+	width: 100%
+	height: 100%
+	position: fixed
+// weixin end
+
+// page index, inspection, search start
+.wx-index, .wx-inspection, .wx-search
+	z-index: 9999
+	& ul
+		list-style: none
+		padding: 0px
+		padding-bottom: 40px
+		margin: 0px
+	& hr
+		margin: 0px !important
+		padding: 0px !important
+		border-top: solid 1px #ddd
+	& li
+		display: block
+		padding: 14px
+		height: 75px
+		border-left: solid 6px #F6C236
+		border-bottom: solid 1px #ddd
+		&.error-device
+			border-left: solid 6px #D7572C !important
+		& span
+			float: left
+			&:nth-child(2)
+				float: right
+				text-align: right
+				padding-top: 10px
+				&.wx-inspection-span
+					padding-top: 0px
+				& p
+					color: #888
+		& p
+			padding: 1px
+			margin: 0px
+			color: #666
+			&.error-font
+				color: #D7572C !important
+
+// page index, inspection, search end
+
+// page application_weixin start
+
+.hive-weixin-topbar
+	position: fixed
+	background-color: #2B353B
+	border: 0px
+	margin: 0px
+	width: 100%
+	height: 50px
+	z-index: 10000
+	& *
+		color: #666
+	& i
+		color: #FFF
+		font-size: 15px
+		cursor: pointer
+		margin-right: 0px
+		margin-bottom: 0px
+		&.pull-right
+			color: #999
+			&.showInbox:before
+				content: "收件箱"
+			&.showOutbox:before
+				content: "发件箱"
+			&.showNewMessage:before
+				content: "新建"
+			&.selectIcon
+				color: #FFF
+	& .fa
+		border: 0px
+		display: initial
+		&:hover
+			background-color: initial !important
+	& li
+		position: relative
+		top: 13px
+		margin-left: 35px
+		& i
+			font-size: 16px
+	& .pull-left
+		display: block
+
+	& .wx-searchInput
+		float: right
+		border-width: 0px
+		padding: 0px
+		position: relative
+		top: 6px
+		width: 0%
+		transition: 0.3s
+		-moz-transition: 0.3s
+		-webkit-transition: 0.3s
+		-o-transition: 0.3s
+		border-radius: 0px
+		&.wx-searchInput-show
+			width: 30%
+			padding: 6px 12px
+			border-width: 1px
+
+.wx-toplist
+	position: fixed
+	top: 51px
+	right: -132px
+	border: solid 1px #DDD
+	background-color: #EDEDED
+	border-radius: 3px
+	transition: 0.2s ease
+	-moz-transition: 0.2s ease
+	-webkit-transition: 0.2s ease
+	-o-transition: 0.2s ease
+	&.wx-toplist-show
+		right: 1px
+	& ul
+		padding: 0px
+		padding-bottom: 10px
+		margin: 0px
+	& li
+		list-style: none
+		text-align: left
+		width: 130px
+		padding: 10px
+		margin: 0px
+		color: #aaa
+		position: initial !important
+		&:nth-child(1)
+			border-bottom: solid 1px #DDD
+		&.font-black
+			color: #555
+// page application_weixin end
+
+.wx-leftside
+	position: fixed
+	top: 0px
+	right: 100%
+	width: 90%
+	background-color: #FFF
+	transition: 0.3s ease
+	-moz-transition: 0.3s ease
+	-webkit-transition: 0.3s ease
+	-o-transition: 0.3 ease
+	overflow-y: scroll
+	overflow-x: hidden
+	height: 100%
+	z-index: 10002
+	& i 
+		color: #FFF
+		font-size: 20px
+		cursor: pointer
+	&.wx-leftside-show
+		right: 10% !important
+	& .wx-leftside-header
+		position: relative
+		height: 130px
+		background-color: #666
+		& a
+			text-decoration: none
+		& .leftside-circle
+			border-radius: 100%
+			position: absolute
+			text-align: center
+			line-height: 42px
+		& .user-circle
+			top: 13px
+			left: 20px
+			width: 60px
+			height: 60px
+			& i
+				position: relative
+				top: 9px
+			background-color: #F95B2E
+		& .message-circle
+			top: 13px
+			right: 20px
+			width: 40px
+			height: 40px
+			background-color: #F6C236
+			& .wx-messageAlarm
+				width: 8px
+				height: 8px
+				border-radius: 100%
+				background-color: red
+				position: absolute
+				top: 1px
+				right: 1px
+				display: none
+		& .leftside-profile
+			position: absolute
+			bottom: 6px
+			left: 20px
+			& p
+				margin: 0px
+				color: #EEE
+		& .leftside-angle-down
+			position: absolute
+			right: 20px
+			bottom: 20px
+	& .wx-leftside-body
+		& a
+			text-decoration: none
+		& .leftside-deviceList
+			height: 50px
+			padding: 5px
+			position: relative
+			& span
+				color: #EEE
+				position: relative
+				top: 10px
+				&:nth-child(1)
+					left: 10px
+				&:nth-child(2)
+					left: 40px
+				&:nth-child(3)
+					float: right
+					right: 40px
+			&.leftside-deviceNum
+				background-color: #33A2E4
+			&.leftside-onlineDevice
+				background-color: #27B976
+			&.leftside-abnormalDevice
+				background-color: #D7572C
+			&.leftside-addDevice
+				background-color: #F6C234
+		& .leftside-group
+			color: #666
+			padding: 10px
+			font-size: 13px
+		& .leftside-nav
+			width: 100%
+			display: block
+			list-style: none
+			padding: 0px
+			margin: 0px
+			& i
+				color: #666
+				font-size: 14px
+				&.leftside-rotate
+					transform: rotate(90deg)
+			& li
+				height: 50px
+				padding: 5px
+				display: block
+				width: 100%
+				border-bottom: solid 1px #ddd
+				& span
+					position: relative
+					color: #666
+					top: 10px
+					color: #666
+					&:nth-child(1)
+						left: 10px
+					&:nth-child(2)
+						left: 40px
+					&:nth-child(3)
+						float: right
+						right: 40px
+						color: #D7572C
+
+// page weixin-temperature start
+
+.wx-temperature
+	& label
+		padding: 0px 10px
+		&.cell-label-symbol
+			margin-left: -13px
+
+//page weixin-temperature end
+
+// page weixin-map start
+.wx-map
+	height: 100%
+	& #mapContainer
+		min-height: 400px
+		height: 100%
+		width: 100%
+
+// page weixin-map end
+
+// page group start
+
+.wx-group
+	padding-top: 40px
+	& .wx-group-body
+		& .wx-group-info
+			margin-top: 10px auto
+			border-left: solid 6px #2794CA
+			border-bottom: solid 1px #ddd
+			padding-top: 10px
+			position: relative
+			& .leftside-rotate
+				transform: rotate(90deg)
+				color: #2794CA
+				position: absolute
+				top: 20px
+				left: 20px
+			& div
+				margin-left: 40px
+				& label,h1
+					color: #777
+					margin: 10px 3px
+					font-weight: 100
+				&:nth-child(2)
+					& .wx-group-infoName
+						font-size: 19px
+				&.wx-group-phone
+					position: absolute
+					bottom: 10px
+					right: 20px
+					width: 20px
+					height: 20px
+					border-radius: 100%
+					text-align: center
+					background-color: #0DCE00
+					& i
+						color: #FFF
+		& .wx-group-list
+			& ul
+				list-style: none
+				padding: 0px
+				margin: 0px
+			& li
+				display: block
+				padding: 15px
+				border-bottom: solid 1px #ddd
+				border-left: solid 6px #F6C236
+				&.error-device
+					border-left: solid 6px #D7572C !important
+				& span
+					float: left
+					&:nth-child(1)
+						& p:nth-child(3)
+							color: #888
+					&:nth-child(2)
+						float: right
+						text-align: right
+						padding-top: 10px
+						& p:nth-child(2)
+							color: #888
+				& p
+					padding: 1px
+					margin: 0px
+					color: #666
+					&.error-font
+						color: #D7572C !important
+				
+
+
+// page group end
+
+// page deviceDetails and page newDevice start
+	
+.wx-deviceDetails,.wx-newDevice
+	width: 100%
+	position: fixed
+	left: 100%
+	transition: 0.4s ease
+	-moz-transition: 0.4s ease
+	-webkit-transition: 0.4s ease
+	-o-transition: 0.4s ease
+	padding-top: 50px
+	height: 100%
+	overflow: scroll
+	z-index: 10
+	&.wx-newDevice
+		left: 0%
+	&.wx-deviceDetails-show
+		left: 0%
+	& .status-info
+		margin: 0px
+		padding: 2px
+		& i
+			position: absolute
+			color: #FFF
+			z-index: 1
+		& .wx-chartIcon
+			right : 10px
+			top: 10px
+		& .wx-batteryIcon
+			left: 10px
+			top: 10px
+		& .col-md-6
+			padding: 2px
+			& > div
+				position: relative
+				width: 100%
+				height: 116px
+				background-color: #FFD70D
+				&.grid-error
+					background-color: #D7572C !important
+				& .number
+					text-align: center
+					font-size: 30px
+					color: white
+					padding-top: 20px
+				& .desc
+					font-size: 12px
+					text-align: center
+					color: white
+					margin-top: -3px
+				& .hive-quick-numberBox
+					width: 100%
+					padding-top: 20px
+					& div
+						display: inline			
+				& .hive-quick-number
+					text-align: center
+					font-size: 30px
+					color: #FFF
+					font-family: Arial Narrow
+					font-weight: 100					
+				& .hive-quick-symbol
+					text-align: center
+					font-size: 26px
+					width: 20%
+					float: left
+					padding-top: 17px
+
+			& .hive-quick-humiture .hive-quick-number
+				display: block
+				text-align: left
+
+			& .hive-quick-humiture .hive-quick-desc
+				text-align: left
+
+			& .hive-quick-temperature .hive-quick-number
+				display: block
+				text-align: right
+
+			& .hive-quick-temperature .hive-quick-desc
+				text-align: right
+
+			& .hive-quick-temperature
+				text-align: right
+				width: 40%
+				float: left
+			& .hive-quick-humiture
+				text-align: left
+				float: right
+				width: 40%
+
+			& .hive-quick-desc
+				font-size: 12px
+				text-align: center
+				color: #FFF
+				position: relative
+				top: -6px
+	& .wx-deviceDetails-image
+		padding: 0px 3px
+		padding-bottom: 3px
+		& .deviceDetails-image-body
+			& img
+				width: 100%
+				height: 240px
+				color: #777
+				line-height: 200px
+				text-align: center
+	& .wx-deviceDetails-map
+		padding: 0px 3px
+		padding-bottom: 3px
+		& .deviceDetails-map-body
+			> div
+				width: 100%
+				height: 240px
+	& .wx-deviceDetails-header
+		background-color: #FFD70D
+		padding: 5px
+		position: relative
+		& label
+			color: #FFF
+			margin-right: 5px
+			font-weight: 100
+		& i
+			float: right
+			padding-top: 3px
+			color: #FFF
+	& .wx-deviceDetails-form,.wx-newDevice-form
+		width: 60%
+		position: relative
+		margin: 15px auto
+		padding-bottom: 50px
+		& input, select
+			width: 100%
+			margin-bottom: 6px
+			border-radius: 0px !important
+		& > div
+			padding: 7px
+			& > input, > select
+				margin-left: 1px
+			& > div
+				margin-left: 1px
+				position: relative
+				& .device-left
+					position: absolute
+					top: 9px
+					left: -25px
+					padding: 2px
+					font-size: 19px
+				& .device-right
+					position: absolute
+					top: 9px
+					right: 10px
+					&.fa-check
+						color: green !important
+					&.fa-times
+						color: red !important
+				& .device-delete
+					color: red
+					position: absolute
+					top: 9px
+					right: -20px
+		& .deviceDetails-form-mainDevice, .newDevice-form-mainDevice
+			margin-bottom: 30px
+		& .deviceDetails-form-subDevice, .newDevice-form-subDevice
+			& .fa-plus
+				color: red
+				padding: 0px
+				background-color: initial
+		& .wx-deviceDetails-confirm
+			text-align: center
+			margin-top: 20px
+			margin-bottom: 40px
+			& input
+				display: inline
+				width: 45%
+				outline: none
+				border: 0px
+				height: 27px
+				&:nth-child(1)
+					background-color: #FCCF19
+				&:nth-child(2)
+					background-color: #D7572C
+	& .wx-newDevice-confirm
+		position: fixed
+		bottom: 0px
+		left: 0px
+		width: 100%
+		border-top: solid 1px #eee685
+		& > div
+			text-align: center
+			padding: 10px
+			width: 50%
+			color: #777
+			&:first-child
+				float: left
+			&:last-child
+				float: right
+.inspection-inspect,.messageBtns,.messageSendBtn,.wx-newDevice-confirm,.wx-settings-confirm
+	position: fixed
+	bottom: 0px
+	width: 100%
+	padding: 10px
+	color: #777
+	border-top: solid 1px #eee685
+	text-align: center
+	background-color: #FFF
+	& > div
+		width: 50%
+		&:first-child
+			float: left
+		&:last-child
+			float: right
+// page deviceDetails and page newDevice end
+
+// page deviceChart start
+
+.wx-deviceChart
+	width: 100%
+	position: fixed
+	left: 100%
+	transition: 0.4s ease
+	-moz-transition: 0.4s ease
+	-webkit-transition: 0.4s ease
+	-o-transition: 0.4s ease
+	padding-top: 50px
+	height: 100%
+	overflow: scroll
+	z-index: 11
+	background-color: #FFF
+	&.wx-deviceChart-show
+		left: 0%
+	& .wx-deviceChart-header
+		padding: 10px 15px
+		& label
+			color: #777
+			font-weight: 100
+			float: left
+			&:nth-child(2)
+				margin-left: 40px
+			&:nth-child(4)
+				float: right
+		& i
+			color: #777
+			float: right
+			transition: 0.3s ease
+			-moz-transition: 0.3s ease
+			-webkit-transition: 0.3s ease
+			-o-transition: 0.3s ease
+			margin-top: 3px
+	& #wx-chart
+		height: 200px !important
+		width: 100% !important
+		position: relative
+		& a
+			position: absolute
+			bottom: 10px
+			left: 15px
+	& .deviceChart-info
+		border-top: solid #ddd 1px
+		& > div
+			padding: 25px 20px
+			border-bottom: solid #ddd 1px
+			&:nth-child(1) label:nth-child(3)
+				color: #FC3B19
+			&:nth-child(2) label:nth-child(3)
+				color: #3090FE
+			&:nth-child(3) label:nth-child(3)
+				color: #666
+			& > label
+				font-weight: 100
+				&:nth-child(1)
+					font-weight: 500
+					margin-right: 10px
+				&:nth-child(2)
+					color: #777
+				&:nth-child(3)
+					float: right
+					font-size: 22px
+	& .deviceChart-image
+		overflow: auto
+		padding: 5px
+		text-align: center
+		position: absolute
+		top: 95px
+		bottom: 0px
+		left: 0px
+		right: 0px
+	& .deviceChart-map
+		padding: 5px
+		position: absolute
+		top: 95px
+		bottom: 0px
+		left: 0px
+		right: 0px
+
+// page deviceChart end
+
+
+// page message start
+
+.wx-message
+	& *
+		padding: 0px
+		margin: 0px
+	& .wx-message-body
+		position: relative
+		z-index: 10
+		& ul
+			padding-bottom: 50px
+			& li
+				list-style: none
+				padding: 5px
+				font-weight: 600
+				border-bottom: solid 1px #ddd
+				transition: 0.2s
+				-o-transition: 0.2s
+				-moz-transition: 0.2s
+				-webkit-transition: 0.2s
+				&.isRead
+					font-weight: 400 !important
+				&.isSelect
+					background-color: rgba(10, 10, 200 , 0.1)
+					border-bottom: dashed 1px #FFF
+				& p
+					font-family: Arial
+					font-weight: inherit
+					display: block
+				& input
+					float: left
+					margin-right: 5px
+				& .wx-message-sender
+				& .wx-message-title
+				& .wx-message-time
+					float: right
+		& .wx-newMessage, .wx-messageContent
+			position: absolute
+			top: 0px
+			left: 0px
+			width: 100%
+			height: 100%
+			background-color: #FFF
+			z-index: 20
+			display:none
+			& form
+				& > *
+					width: 80%
+					margin: 20px auto
+					padding: 12px
+					border-radius: 0px
+				& textarea
+					height: 300px
+			& div
+				padding: 15px 7px
+				border-bottom: solid 1px #ddd
+				&:last-child
+					border: 0px
+				& p
+					display: inline
+
+// page message end
+
+// page settings start
+
+.wx-settings
+	& form > div
+		border: solid 1px #ddd
+		padding: 10px 20px
+		& > input:nth-child(2)
+			margin-right: 10px
+		& p
+			color: #666
+		&.wx-settings-location, &.wx-settings-ray, &.wx-settings-noDataTime
+			& input
+				width: 70%
+		& select
+			width: 70%
+		&:last-child
+			padding-bottom: 50px
+		&.wx-settings-theme
+			& span
+				float: left
+				width: 30px
+				height: 30px
+				background-color: #FFF
+				margin-right: 10px
+				&:nth-child(2)
+					background-color: #87CEFF
+				&:nth-child(3)
+					background-color: #CD96CD
+				&:nth-child(4)
+					background-color: #66CD00
+				&:nth-child(5)
+					background-color: #FFCC00
+				&:nth-child(6)
+					background-color: #9F79EE
+				&.select-theme
+					border: solid 2px #31A5E7
+	& input
+		width: 45%
+		display: inline
+
+// page settings end
+
+
+// modal
+#bg-modal
+	margin-top: 50px
+
+.modal-body
+	height: 100%
+	& img
+		height: 80%
+		width: 100%
+
+.modal-backdrop
+	display: none !important
+
+.modal-header
+	& i
+		color: red
+		cursor: pointer
+		position: absolute
+		right: 20px
+		top: 10px
+		font-size: 17px 
+
+.modal-header
+	.btn-group
+		float: right
+

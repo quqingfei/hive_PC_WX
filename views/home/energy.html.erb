@@ -1,0 +1,18 @@
+<% content_for :title, '能耗' %>
+<div class="page-content">
+    <%= render "shared/page_breadcrumb", icon: 'icon-icon-08' %>
+</div>
+<textarea id="hive-energy-tmpl" style="display:none">  
+    {#foreach $T.items as d}
+        <div class="col-md-3 col-sm-4 col-xs-6 hive-grid-col" data-id="{$T.d.device_id}" data-name="{$T.d.name}" data-time="{$T.d.time}" data-status="{$T.d.has_warning}">
+            <div class={#if ($T.d.has_data == true && $T.d.has_warning == false)}"hive-grid-cell"{#else}"hive-grid-cell cell-red"{#/if}>
+                <div>
+                    <p class="cell-name">{$T.d.name}</p>
+                </div>
+                <div>
+                    <label class="cell-label cell-labelText">{#if $T.d.has_data == true}{$T.d.energy}{#else}-{#/if}</label>
+                </div>
+            </div>
+        </div>
+    {#/for}
+</textarea>  

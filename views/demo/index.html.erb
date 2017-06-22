@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>温湿度</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: #BBB;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        html {
+            /*font-size: 100%;*/
+            width: 100%;
+            height: 100%;
+        }
+
+        .div-humitrue {
+            transition: 2s;
+        }
+
+        .hexagon, .red {
+          position: relative;
+          width: 300px; 
+          height: 173.21px;
+          background-color: #FFD70D;
+          margin: 86.60px 0;
+        }
+
+        .red {
+            background-color: Red;
+        }
+
+        .hexagon:before,
+        .hexagon:after,
+        .red:before,
+        .red:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          border-left: 150px solid transparent;
+          border-right: 150px solid transparent;
+        }
+
+        .hexagon:before {
+          bottom: 100%;
+          border-bottom: 86.60px solid #FFD70D;
+        }
+
+        .hexagon:after {
+          top: 100%;
+          width: 0;
+          border-top: 86.60px solid #FFD70D;
+        }
+
+        .red:before {
+          bottom: 100%;
+          border-bottom: 86.60px solid Red;
+        }
+
+        .red:after {
+          top: 100%;
+          width: 0;
+          border-top: 86.60px solid Red;
+        }
+
+        div.container {
+            left: 50%;
+            position: absolute;
+            margin-top: 0px;
+            margin-left: -150px;
+        }        
+
+        p {
+            font-family: "方正舒体", Geneva, Arial, Helvetica, sans-serif;
+            text-align: center;
+            /*color: white;*/
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        hr {
+            height: 2px;
+            border: none;
+            border-top: 2px solid burlywood;
+        }
+
+        .p-temp {
+            margin-top: 100px;
+            /*margin-left: 90px; */
+            padding-top: 20px;
+        }
+
+        .p-humidity {
+            margin-top: 20px;
+            /*margin-left: 90px;*/
+        }
+
+        @media (min-width: 640px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1360px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            p {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            p {
+                font-size: 24px;
+            }
+        }
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        function connect() {
+            
+            $.ajax({
+                type: "GET",
+                url: "home#get_devices_count?t=" + encodeURI(new Date()),
+                data: {},
+                dataType: "json",
+                success: function (data) {	
+                	if(!data) {
+                		data = { temp: 0, hum: 0 };
+                	}   
+
+		            change(data.result.temp, data.result.hum, data.result.time);
+		            setTimeout(connect, 11000);
+                }
+            });
+        }
+
+        function change(temp, hum, time) {
+            $('#temp').animate({ opacity: 0.1 }, function () {
+                if(temp > 30) {
+                    $("#hexagon").addClass('red');
+                    $("#hexagon").removeClass('hexagon');
+                } else {
+                    $("#hexagon").addClass('hexagon');
+                    $("#hexagon").removeClass('red');
+                }
+                $('#temp').html(temp + "℃");
+                $('#temp').css('opacity', 1);
+                $('#time').html(time);
+            });
+            $('#humidity').animate({ opacity: 0.1 }, function () {
+                $('#humidity').html(hum + "%");
+                $('#humidity').css('opacity', 1);
+            });
+        }
+        $(document).ready(function () {
+            connect();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class='hexagon' id="hexagon">
+            <p class="p-temp"><span id="time"></span></p>
+            <p class="p-humidity">当前温度:&nbsp;&nbsp;<span id="temp"></span></p>
+            <p class="p-humidity">当前湿度:&nbsp;&nbsp;<span id="humidity"></span></p>
+        </div>
+    </div>
+</body>
+</html>

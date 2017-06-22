@@ -1,0 +1,122 @@
+<div class="page-header navbar navbar-fixed-top">
+  <!-- BEGIN HEADER INNER -->
+  <div class="page-header-inner">
+    <!-- BEGIN LOGO -->
+    <div class="page-logo">
+      <a href="/">
+        <% if current_user.setting.logo.blank? %>
+          <%= image_tag "hlogo.png", alt: "大黄蜂", class: "logo-default" %>
+        <% else %>
+          <img alt="大黄蜂" class="logo-default" src="/v1/settings/logo"/>
+        <% end %>
+      </a>
+      <div class="menu-toggler sidebar-toggler hide">
+      </div>
+    </div>
+    <!-- END LOGO -->
+    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+    </a>
+    
+    <i class="fa fa-search search-btn"></i>
+    <div class="hive-search-link">
+      <input class="form-control" type="text" placeholder="搜索设备" />
+    </div>
+    <!-- END RESPONSIVE MENU TOGGLER -->
+    <!-- BEGIN TOP NAVIGATION MENU -->
+    <div class="top-menu">
+      <ul class="nav navbar-nav">
+        <!-- BEGIN USER LOGIN DROPDOWN -->
+        <li class="dropdown dropdown-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+          <!-- <img alt="" class="img-circle" src=""/> -->
+          <i class="icon-user"></i>
+          <span class="username username-hide-on-mobile">
+            <%= current_user.username  %> 
+          </span>
+          <i class="fa fa-angle-down"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-default">
+            <li>
+              <a href="javascript:void(0);">
+              帐户名：<span id="en_name"> <%= current_user.username  %> </span></a>
+            </li>
+             <li>
+              <a href="javascript:void(0);">
+              姓  名：<span id="full_name"> <%= current_user.full_name %> </span></a>
+            </li>
+             <li>
+              <a href="javascript:void(0);">
+              电  话：<span id="tel_num"> <%= current_user.phone %> </span></a>
+            </li>      
+            <li>
+              <a href="javascript:void(0);">
+              邮  箱：<span id="e-mail"> <%= current_user.email %> </span></a>
+            </li>  
+            <li><a href="/user_center" class="btn default btn-block" id="yye">
+              修  改</a></li>        
+          </ul>
+        </li>
+
+        <li class="dropdown dropdown-extended dropdown-inbox dropdown-user"  id="hive-topBar-msgCenter">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <i class="fa fa-envelope"></i>
+            <span style="display:inline-block;margin-right:20px;">站内信</span>
+             <i class="fa fa-angle-down"></i>
+            <span class="badge badge-default hive-topBar-msgCenterTotal">0 </span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="external">
+              <h3>你有<span class="bold hive-topBar-msgCenterTotal">0</span>新消息</h3>
+              <a href="/message" id="all">查看全部</a>
+            </li>
+            <li>
+              <ul id="hive-topBar-msgList" class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+              
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/settings" class="rbl">
+            <i class="fa fa-gear"></i>
+            <span>设置</span>
+          </a>
+        </li>
+        <li>
+          <a href='/users/sign_out' data-method='delete' class="rbl">
+            <i class="fa fa-sign-out"></i>
+            <span>退出</span>
+          </a>
+        </li>
+
+        <!-- END USER LOGIN DROPDOWN -->
+        <%#
+          <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+          <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+          <!-- <li class="dropdown dropdown-quick-sidebar-toggler">
+            <a href="javascript:;" class="dropdown-toggle">
+            <i class="icon-logout"></i>
+            </a>
+          </li> -->
+        %>
+        <!-- END QUICK SIDEBAR TOGGLER -->
+      </ul>
+    </div>
+    <!-- END TOP NAVIGATION MENU -->
+  </div>
+  <!-- END HEADER INNER -->
+  <textarea id="hive-topBar-msgList-tmpl" style="display: none;">
+    {#foreach $T.items as d}
+        <li>
+          <a href="/message?message_id={$T.d.id}">
+            <span class="subject">
+              <span class="from">{$T.d.userName}</span>
+              <span class="time">{$T.d.created}</span>
+            </span>
+            <span class="message">{$T.d.content}</span>
+          </a>
+      </li>
+    {#/for}
+  </textarea>
+</div>

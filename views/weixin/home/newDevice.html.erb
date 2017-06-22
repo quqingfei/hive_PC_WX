@@ -1,0 +1,58 @@
+<div class="wx-newDevice" id="wx-newDevice">
+	<div class="wx-newDevice-form">
+		<div class="newDevice-form-mainDevice">
+			<div class="clearfix">
+				<i class="fa fa-bar-chart device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value:mainSn}" data-snType="插座" />
+				<i class="device-right fa"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="设备名称" data-bind="attr: {value:mainName}"/>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: mainDescription}"/>
+			<select class="form-control" data-bind="foreach: groups">
+				<option data-bind="attr: {value: group_id}, text: groupName"></option>
+			</select>
+		</div>
+		<div class="newDevice-form-subDevice">
+			<div class="clearfix">
+				<i class="icon-icon-04 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: tempSn}" data-snType="温湿度蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: tempDescription}"/>
+			<div class="clearfix">
+				<i class="icon-icon-05 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: shakeSn}" data-snType="加速度蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: shakeDescription}"/>
+			<div class="clearfix">
+				<i class="icon-icon-06 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: imageSn}" data-snType="摄像头蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: imageDescription}"/>
+			<div class="clearfix">
+				<i class="icon-icon-07 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: raySn}" data-snType="红外线蜂巢" />
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: rayDescription}"/>
+			<div class="newDevice-plus">
+				<i class="fa fa-plus" data-bind="click: addDevice"></i>
+			</div>
+			<div>
+				<div class="clearfix hidden">
+					<i class="fa fa-spin fa-spinner device-left"></i>
+					<input type="text" class="form-control deviceSn" placeholder="序列号" />
+					<i class="device-right fa"></i>
+					<i class="device-delete fa fa-minus"></i>
+				</div>
+				<input type="text" class="form-control hidden deviceDescription" placeholder="备注"/>
+			</div>
+		</div>
+	</div>
+</div>

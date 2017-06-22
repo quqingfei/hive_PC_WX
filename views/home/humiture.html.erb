@@ -1,0 +1,21 @@
+<% content_for :title, '温湿度' %>
+<div class="page-content">
+    <%= render "shared/page_breadcrumb", icon: 'icon-icon-04' %>
+</div>
+<textarea id="hive-humiture-tmpl" style="display:none">  
+    {#foreach $T.items as d}
+        <div class="col-md-3 col-sm-4 col-xs-6 hive-grid-col" data-id="{$T.d.device_id}" data-name="{$T.d.name}" data-time="{$T.d.time}" data-status="{$T.d.has_warning}">
+            <div class={#if ($T.d.has_data == true && $T.d.has_warning == false)}"hive-grid-cell"{#else}"hive-grid-cell cell-red"{#/if}>
+                <div>
+                     <p class="cell-name">{$T.d.name}</p>
+                </div>
+                <div>
+	               <label class="cell-label cell-labelText">{#if $T.d.has_data == true}{$T.d.temperature}{#else}-{#/if}</label>
+	               <label class="cell-label cell-label-symbol">&amp;</label>
+	               <label class="cell-label cell-labelText">{#if $T.d.has_data == true}{$T.d.humidity}{#else}-{#/if}</label>
+                </div>
+                <i class={#if ($T.d.has_power == false)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+            </div>
+        </div>
+    {#/for}
+</textarea>  

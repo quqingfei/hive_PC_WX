@@ -1,0 +1,133 @@
+<div class="wx-deviceDetails" id="wx-deviceDetails">
+	<div class="row status-info">
+    <div class="temperature-stat col-md-6 col-sm-6 col-xs-6">
+      <i class="icon-icon-04 wx-chartIcon" data-bind="click: chartShow" data-type="temp"></i>
+      <div class="details wx-hive-grid-cell" data-bind="css:{'grid-error': humitureAlarm}">
+        <div class="hive-quick-numberBox clearfix">
+           <div class="hive-quick-temperature" data-bind="click: chartShow" data-type="temp">
+            <div class="hive-quick-number" data-bind="text: temp" data-type="temp"></div>
+            <div class="hive-quick-desc" data-type="temp">温度(℃)</div>
+           </div>
+           <div class="hive-quick-symbol hive-quick-number">&</div>
+           <div class="hive-quick-humiture" data-bind="click: chartShow" data-type="hum">
+             <div class="hive-quick-number" data-bind="text: hum" data-type="hum"></div>
+             <div class="hive-quick-desc" data-type="hum">湿度(%)</div>
+           </div>
+        </div>
+      </div>
+      <i class="wx-batteryIcon" data-bind="css: {'fa fa-bolt': humiturePower}"></i>
+    </div>
+    <div class="shaking-stat col-md-6 col-sm-6 col-xs-6">
+      <i class="icon-icon-05 wx-chartIcon" data-bind="click: chartShow" data-type="shake"></i>
+      <div class="details wx-hive-grid-cell" data-bind="css:{'grid-error': shakeAlarm}, click: chartShow" data-type="shake">
+        <div class="number hive-quick-number" data-bind="text: shake" data-type="shake"></div>
+        <div class="desc" data-type="shake">
+           震动(次/小时)
+        </div>
+      </div>
+      <i class="wx-batteryIcon" data-bind="css: {'fa fa-bolt': shakePower}"></i>         
+    </div>
+    <div class="ray-stat col-md-6 col-sm-6 col-xs-6">
+      <i class="icon-icon-07 wx-chartIcon" data-bind="click: chartShow" data-type="ray"></i>
+      <div class="details wx-hive-grid-cell" data-bind="css:{'grid-error': rayAlarm}, click: chartShow" data-type="ray">
+        <div class="number hive-quick-number" data-bind="text: ray" data-type="ray"></div>
+        <div class="desc" data-type="ray">
+          人流(人/小时)
+        </div>
+      </div>
+      <i class="wx-batteryIcon" data-bind="css: {'fa fa-bolt': rayPower}"></i>              
+    </div>
+    <div class="energry-consumption-stat col-md-6 col-sm-6 col-xs-6 hidden">
+      <i class="icon-icon-08 wx-chartIcon" data-bind="click: chartShow" data-type="energy"></i>
+      <div class="details wx-hive-grid-cell" data-bind="css:{'grid-error': energyAlarm}, click: chartShow" data-type="energy">
+        <div class="number hive-quick-number" data-bind="text: energy" data-type="energy"></div>
+        <div class="desc" data-type="energy">
+           能耗(kw/h)
+        </div>
+      </div>          
+    </div>
+	</div>
+	<div class="wx-deviceDetails-image">
+		<div class="deviceDetails-image-header wx-deviceDetails-header wx-hive-grid-cell">
+			<label>最新照片:</label>
+			<label data-bind="text: imageTime"></label>
+			<i class="icon-icon-06" data-bind="click: chartShow" data-type="image"></i>
+		</div>
+		<div class="deviceDetails-image-body">
+			<img alt="暂无图片" data-bind="attr: {src: imagePath}, click: chartShow" data-type="image"/>
+		</div>
+	</div>
+	<div class="wx-deviceDetails-map">
+		<div class="deviceDetails-map-header wx-deviceDetails-header wx-hive-grid-cell" data-bind="click: chartShow" data-type="map">
+			<label data-type="map">地理位置:</label>
+			<label data-bind="text: location" data-type="map"></label>
+			<i class="icon-icon-03" data-bind="click: chartShow" data-type="map"></i>
+		</div>
+		<div class="deviceDetails-map-body">
+			<div id="deviceDetails-map"></div>
+		</div>
+	</div>
+	<div class="wx-deviceDetails-form">
+		<div class="deviceDetails-form-mainDevice">
+			<div class="clearfix">
+				<i class="fa fa-bar-chart device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value:mainSn}" disabled="disabled" data-snType="插座"/>
+				<i class="device-right fa"></i>
+			</div>
+			<input type="text" class="form-control" placeholder="设备名称" data-bind="attr: {value:mainName}"/>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: mainDescription}"/>
+			<select class="form-control" data-bind="event: {change: groupsChange}, foreach: group">
+				<option data-bind="attr: {value: group_id}, text: groupName"></option>
+			</select>
+			<input type="text" class="form-control" placeholder="管理员" data-bind="attr: {value: admin}" disabled="disabled" />
+			<input type="text" class="form-control" placeholder="电话" data-bind="attr: {value: phone}" disabled="disabled" />
+		</div>
+		<div class="deviceDetails-form-subDevice">
+			<div class="clearfix">
+				<i class="icon-icon-04 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: tempSn, disabled: tempDisabled ? 'disabled' : ''}" data-snType="温湿度蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: tempDescription}"/>
+			<div class="clearfix">
+				<i class="icon-icon-05 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: shakeSn, disabled: shakeDisabled ? 'disabled' : ''}" data-snType="加速度蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: shakeDescription}"/>
+			<div class="clearfix">
+				<i class="icon-icon-06 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: imageSn, disabled: imageDisabled ? 'disabled' : ''}" data-snType="摄像头蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: imageDescription}"/>
+			<div class="clearfix">
+				<i class="icon-icon-07 device-left"></i>
+				<input type="text" class="form-control deviceSn" placeholder="序列号" data-bind="attr: {value: raySn, disabled: rayDisabled ? 'disabled' : ''}" data-snType="红外线蜂巢"/>
+				<i class="device-right fa"></i>
+				<i class="device-delete fa fa-minus"></i>
+			</div>
+			<input type="text" class="form-control deviceDescription" placeholder="备注" data-bind="attr: {value: rayDescription}"/>
+			<div class="deivceDetails-plus">
+				<i class="fa fa-plus" data-bind="click: addDevice"></i>
+			</div>
+			<div>
+				<div class="clearfix hidden">
+					<i class="fa fa-spin fa-spinner device-left"></i>
+					<input type="text" class="form-control deviceSn" placeholder="序列号" />
+					<i class="device-right fa"></i>
+					<i class="device-delete fa fa-minus"></i>
+				</div>
+				<input type="text" class="form-control hidden deviceDescription" placeholder="备注"/>
+			</div>
+		</div>
+		<div class="wx-deviceDetails-confirm">
+      <input type="button" class="hive-quick-confirm-save" value="确认" data-bind="click: detailsConfirmEvent"/>
+      &nbsp;
+      <input type="button" class="hive-quick-confirm-cancel" value="取消" data-bind="click: hideDeviceDetails"/>
+    </div>
+	</div>
+</div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+  <!-- BEGIN HEAD -->
+  <head>
+    <meta charset="utf-8"/>
+    <title>大黄蜂 - 冰柜管理系统<%= (" - "  + yield(:title)) %></title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+    <% if current_user.setting.theme != "default" %>
+    <%= stylesheet_link_tag ('themes/hive-theme-' + current_user.setting.theme), media: 'all', 'data-turbolinks-track' => false %>
+    <% end %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  </head>
+  <!-- END HEAD -->
+  <!-- BEGIN BODY -->
+  <%#
+    <!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+    <!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+    <!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+    <!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+    <!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+    <!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+    <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+    <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+    <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+  %>
+  <body id="body-<%= controller_name %>-<%= action_name %>" class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid page-quick-bg-bar-content">
+    <!-- BEGIN HEADER -->
+      <%= render "shared/page_top_bar" %>
+    <!-- END HEADER -->
+    <div class="clearfix">
+    </div>
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+      <!-- BEGIN SIDEBAR -->
+        <%= render "shared/page_left_side_bar" %>
+      <!-- END SIDEBAR -->
+      <!-- BEGIN CONTENT -->
+      <div class="page-content-wrapper">
+        <%= yield %>
+      </div>
+      <!-- END CONTENT -->
+      <!-- BEGIN QUICK SIDEBAR -->
+      <a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
+      <div class="page-quick-sidebar-wrapper">
+        <div class="trapezoid-toggler">
+          <div class="page-quick-top-triangle quick-triangle"></div>
+          <i class="fa fa-arrow-left"></i>
+          <div class="page-quick-bottom-triangle quick-triangle"></div>
+        </div>
+        <%= render 'shared/page_quick_side_bar' %>
+      </div>
+
+      <div class="page-quick-bg-bar">
+        
+        <div class="bgBar-toggler">
+          <div class="page-quick-top-triangle quick-triangle"></div>
+          <i class="fa fa-arrow-right"></i>
+          <i class="icon-icon-04" data-name="温度(℃)" data-target="temp"></i>
+          <i class="fa fa-tint" data-name="湿度(%)" data-target="hum"></i>
+          <i class="icon-icon-05" data-name="震动(次)" data-target="shake"></i>
+          <i class="icon-icon-07" data-name="人流(人)" data-target="ray"></i>
+          <i class="icon-icon-08 hidden" data-name="能耗(kw)" data-target="energy"></i>
+          <i class="icon-icon-06" data-name="影像" data-target="image"></i>
+          <i class="icon-icon-03" data-name="地理位置" data-target="map"></i>
+          <div class="page-quick-bottom-triangle quick-triangle"></div>
+        </div>
+        <%= render 'shared/page_quick_bg_bar' %>
+      </div>
+
+      <div class="quick-sidebar-blackbox"></div>
+      <!-- END QUICK SIDEBAR -->
+    </div>
+    <!-- END CONTAINER -->
+    <div class="scroll-to-top">
+      <i class="icon-arrow-up"></i>
+    </div>
+    <div class="page-loading hide">
+      <%= link_to root_path do image_tag "loading-spinner-grey.gif", alt: "" end %>
+      &nbsp;&nbsp;
+      <span>加载中...</span>
+    </div>
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag 'ie_compatible', 'data-turbolinks-track' => true %>
+    <![endif]-->
+    <%= javascript_include_tag 'application_commons', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application_pages', 'data-turbolinks-track' => true %>
+    <input type="hidden" id="hive-settings" value="<%= @settings %>"/>
+    <input type="hidden" id="hive-current-date" value="<%= @current_date_time %>" />
+  </body>
+</html>

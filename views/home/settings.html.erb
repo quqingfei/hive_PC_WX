@@ -1,0 +1,129 @@
+<% content_for :title, '用户设置' %>
+<div class="page-content">
+  <%= render "shared/page_breadcrumb", icon: 'icon-info' %>
+  <form id="hive-settingsForm">
+  	<div class="hive-settings">
+	  	<div class="hive-settings-theme">
+	  		<span class="hive-theme-fontColor">主题</span>
+	  		<ul class="clearfix">
+	  			<li data-themeType="blue">
+	  				<span>
+	  				</span>
+	  			</li>
+	  			<li data-themeType="pink">
+	  				<span>
+	  				</span>
+	  			</li>
+	  			<li data-themeType="green">
+	  				<span>
+	  				</span>
+	  			</li>
+	  			<li data-themeType="default">
+	  				<span>
+	  				</span>
+	  			</li>
+	  			<li data-themeType="purple">
+	  				<span>
+	  				</span>
+	  			</li>
+	  		</ul>
+	  	</div>
+	  	<div class="hive-settings-logo">
+	  		<span class="hive-theme-fontColor hive-settings-logo-name">logo</span>
+	  		<div class="hive-theme-logoContainer">
+	  			<div id="hive-theme-logoSelector">选择图片</div>
+		  		<img class="hive-theme-preview hive-theme-preview-hide"></img>
+	  		</div>
+	  		
+	  		
+	  	</div>
+	  	<div class="hive-settings-alarm">
+	  		<span class="hive-theme-fontColor hive-settings-alarm-name">报警阀值</span>
+	  		<span>
+	    		<ul>
+	    			<li class="hive-settings-alarm-energy hidden">
+	    				<span class="hive-settings-alarm-label">能耗</span>
+	    				<input class="form-control" placeholder="低于:   (kw.h)" name="min_energy" data-bind="value:min_energy"/>
+	    				<input class="form-control" placeholder="高于:   (kw.h)" name="max_energy" data-bind="value:max_energy"/>
+	    			</li>
+	    			<li class="hive-setttings-alarm-temp clearfix">
+	    				<span class="hive-settings-alarm-label">温度</span>
+	    				<input class="form-control" placeholder="低于:   (℃)" name="min_temperature" data-bind="value:min_temperature"/>
+	    				<input class="form-control" placeholder="高于:   (℃)" name="max_temperature" data-bind="value:max_temperature"/>
+	    			</li>
+	    			<li class="hive-settings-alarm-hum clearfix">
+	    				<span class="hive-settings-alarm-label">湿度</span>
+	    				<input class="form-control" placeholder="低于:   (%)" name="min_humidity" data-bind="value:min_humidity"/>
+	    				<input class="form-control" placeholder="高于:   (%)" name="max_humidity" data-bind="value:max_humidity"/>
+	    			</li>
+	    			<li class="hive-settings-alarm-shake clearfix">
+	    				<span class="hive-settings-alarm-label">震动</span>
+	    				<input class="form-control" placeholder="低于:   (次)" name="min_shake" data-bind="value:min_shake"/>
+	    				<input class="form-control" placeholder="高于:   (次)" name="max_shake" data-bind="value:max_shake"/>
+	    			</li>
+	    			<li class="hive-settings-alarm-location clearfix">
+	    				<span class="hive-settings-alarm-label">位置</span>
+	    				<input class="form-control" placeholder="半径:   (百米)" name="radius" data-bind="value:radius"/>
+	    			</li>
+	    			<li class="hive-settings-alarm-ray clearfix">
+	    				<span class="hive-settings-alarm-label">人流</span>
+	    				<input class="form-control" placeholder="低于:   (人)" name="ray" data-bind="value:ray"/>
+	    			</li>
+	    			<li class="hive-settings-alarm-noDataTime clearfix">
+	    				<span class="hive-settings-alarm-label">无数据时间</span>
+	    				<input class="form-control" placeholder="高于:   (小时)" name="max_no_data_time" data-bind="value:max_no_data_time"/>
+	    			</li>
+	    		</ul>
+	  		</span>
+	  	</div>
+	  	<div class="hive-settings-dataGap">
+	  		<span class="hive-theme-fontColor">温湿度数据间隔</span>
+	  		<ul>
+	  			<li class="hive-settings-tempDataGapOptions" data-gapType="0.5">0.5h</li>
+	  			<li class="hive-settings-tempDataGapOptions" data-gapType="1">1h</li>
+	  			<li class="hive-settings-tempDataGapOptions" data-gapType="2">2h</li>
+	  			<li class="hive-settings-tempDataGapOptions" data-gapType="6">6h</li>
+	  			<li class="hive-settings-tempDataGapOptions" data-gapType="12">12h</li>
+	  			<li class="hive-settings-tempDataGapOptions" data-gapType="24">24h</li>
+	  		</ul>
+	  	</div>
+	  	<div class="hive-settings-dataGap">
+	  		<span class="hive-theme-fontColor">震动数据间隔</span>
+	  		<ul class="clearfix">
+	  			<li class="hive-settings-shakeDataGapOptions" data-gapType="0.5">0.5h</li>
+	  			<li class="hive-settings-shakeDataGapOptions" data-gapType="1">1h</li>
+	  			<li class="hive-settings-shakeDataGapOptions" data-gapType="2">2h</li>
+	  			<li class="hive-settings-shakeDataGapOptions" data-gapType="6">6h</li>
+	  			<li class="hive-settings-shakeDataGapOptions" data-gapType="12">12h</li>
+	  			<li class="hive-settings-shakeDataGapOptions" data-gapType="24">24h</li>
+	  		</ul>
+	  	</div>
+	  	<div class="hive-settings-dataGap">
+	  		<span class="hive-theme-fontColor">图片数据间隔</span>
+	  		<ul class="clearfix">
+	  			<li class="hive-settings-imageDataGapOptions" data-gapType="0.5">0.5h</li>
+	  			<li class="hive-settings-imageDataGapOptions" data-gapType="1">1h</li>
+	  			<li class="hive-settings-imageDataGapOptions" data-gapType="2">2h</li>
+	  			<li class="hive-settings-imageDataGapOptions" data-gapType="6">6h</li>
+	  			<li class="hive-settings-imageDataGapOptions" data-gapType="12">12h</li>
+	  			<li class="hive-settings-imageDataGapOptions" data-gapType="24">24h</li>
+	  		</ul>
+	  	</div>
+	  	<div class="hive-settings-dataGap">
+	  		<span class="hive-theme-fontColor">人流数据间隔</span>
+	  		<ul class="clearfix">
+	  			<li class="hive-settings-rayDataGapOptions" data-gapType="0.5">0.5h</li>
+	  			<li class="hive-settings-rayDataGapOptions" data-gapType="1">1h</li>
+	  			<li class="hive-settings-rayDataGapOptions" data-gapType="2">2h</li>
+	  			<li class="hive-settings-rayDataGapOptions" data-gapType="6">6h</li>
+	  			<li class="hive-settings-rayDataGapOptions" data-gapType="12">12h</li>
+	  			<li class="hive-settings-rayDataGapOptions" data-gapType="24">24h</li>
+	  		</ul>
+	  	</div>
+	  	<div class="hive-settings-button">
+	  		<input type="button" name="hive-settings-confirm" class="form-control hive-settings-confirm"  value="确定" />
+	  		<input type="button" name="hive-settings-cancel" class="form-control hive-settings-cancel"  value="取消" />
+	  	</div>
+	  </div>
+  </form>
+</div>

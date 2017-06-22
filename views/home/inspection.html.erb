@@ -1,0 +1,22 @@
+<% content_for :title, '巡检记录' %>
+<div class="page-content">
+    <%= render "shared/page_breadcrumb", icon: 'icon-icon-09' %>
+</div>
+<textarea id="hive-inspection-tmpl" style="display:none">  
+    {#foreach $T.items as d}
+      <div class="col-md-3 col-sm-4 col-xs-6 hive-grid-col" data-id="{$T.d.device_id}" data-name={$T.d.Devicename} data-status={$T.d.time} data-time={$T.d.time}>
+          <div class={#if ($T.d.isError == false)}"hive-grid-cell inspection-cell"{#else}"hive-grid-cell inspection-cell cell-red"{#/if}>
+          		<div class="cell-name">{$T.d.Devicename}</div>
+              <div>
+                <span class="cell-label cell-labelText">{#if $T.d.time > 0}{$T.d.time}{#/if}</span>
+                <span class="inspection-label">{#if $T.d.time > 0}天前{#elseif $T.d.time == 0}已巡检{#else}未巡检{#/if}</span>
+              </div>
+              <div>
+               	<label class="inspection-label">{#if $T.d.time != null}巡检员:{$T.d.name}{#else}{#/if}</label>
+              </div>
+          </div>
+      </div>
+    {#/for}
+</textarea>   
+
+

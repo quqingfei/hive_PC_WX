@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Raw Data</title>
+    <style type="text/css">
+        table, th, td {
+           border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        function displayData (me) {
+            if(me.value) {
+                window.location.href = "/demo/raw?dev_type=" + me.value;
+            } else {
+                window.location.href = "/demo/raw";
+            }
+        }
+
+         function onloaded () {
+            <% if params[:dev_type].blank? %>
+            document.getElementsByTagName('select')[0].value = "";
+            <% else %>
+            document.getElementsByTagName('select')[0].value = <%= params[:dev_type] %>;
+            <% end %>
+        };
+    </script>
+</head>
+<body onload="onloaded()">
+    <h1>We here just show you top 1000 rows on latest!</h1>
+    <div>
+        显示数据类型： <select onchange="displayData(this);" style="width: 200px;">
+            <option value="">所有</option>
+            <option value="1">温湿度</option>
+            <option value="2">震动</option>
+            <option value="3">红外</option>
+            <option value="4">图像</option>
+            <option value="5">GPRS</option>
+        </select>
+    </div>
+    <br/>
+    <table rules="all">
+        <thead>
+            <tr>
+                <th style="width: 220px;">Date</th>
+                <th style="width: 150px;">Mac</th>
+                <th >Cmd</th>
+                <th style="width: 75px;">Dev Type</th>
+                <th>Raw</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @data.each do |d| %>
+                <tr>
+                    <td><%= d.created_at %></td>
+                    <td><%= d.mac %></td>
+                    <td><%= d.cmd %></td>
+                    <td><%= d.dev_type %></td>
+                    <td><%= d.original_data %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</body>
+</html>

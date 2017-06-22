@@ -1,0 +1,17 @@
+<% content_for :title, '影像' %>
+<div class="page-content">
+    <%= render "shared/page_breadcrumb", icon: 'icon-icon-06' %>
+	<input type="hidden" id="hive-picture-data" value="<%= @lastest_images %>" />
+</div>
+<textarea id="hive-picture-tmpl" style="display:none">  
+    {#foreach $T.items as d}
+        <div id="{$T.d.elem_id}" class="col-md-3 col-sm-4 col-xs-6 hive-grid-col" data-id="{$T.d.device_id}" data-name="{$T.d.name}" data-time="{$T.d.time}" data-status="{$T.d.has_data}">
+            <div class="hive-picture-cell" style={#if $T.d.has_data == true }"background:url('{$T.d.url}');background-size: 100% 100%;"{#else}"background-color:#DB5323;"{#/if}>
+                <div {#if $T.d.has_data == true }class="hive-picture-black"{#/if}>
+                    <p class="cell-name">{$T.d.name}</p>
+                </div>
+                <i class={#if ($T.d.has_power == false)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+            </div>
+        </div>
+    {#/for}
+</textarea>

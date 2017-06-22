@@ -1,0 +1,140 @@
+<% content_for :title, '搜索' %>
+<div class="page-content">
+  <%= render "shared/page_breadcrumb", icon: 'icon-info' %>
+  <div class="hive-serach-container">
+  	<div class="hive-search-header">
+  		<span>条件筛选</span>
+  		<span>位置:</span>
+  		<span>
+  			<select class="hive-search-provinceSelect hive-search-trigger">
+  			</select>
+  		</span>
+  		<span>
+  			<select class="hive-search-citySelect hive-search-trigger">
+  			</select>
+  		</span>
+  		<span>状态:</span>
+  		<span>
+  			<select class="hive-search-statusSelect hive-search-trigger">
+  				<option selected="selected" value="all">全部</option>
+  				<option value="normal">正常</option>
+  				<option value="unnormal">异常</option>
+  			</select>
+  		</span>
+  		<span class="hive-search-dateContainer">
+  			<span>设备添加日期:</span>
+	  		<span>
+	  			<input class="form-control hive-search-trigger" type="text" id="hive-search-thisDay">
+	  		</span>
+	  		<span>
+	  			<input class="form-control hive-search-trigger" type="text" id="hive-search-thatDay">
+	  		</span>
+  		</span>
+  	</div>
+  	<div class="hive-search-table">
+   		<table class="table table-bordered table-hover">
+   			<thead>
+          <tr>
+            <th class="hive-sortable hive-selected" data-sortType="name">
+              设备名称
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="admin">
+              管理者
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="temp">
+              温度
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="hum">
+              湿度
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="shake">
+              震动
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="location">
+              位置
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="energy">
+              能耗
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="image">
+              影像
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="network">
+              网络
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="time">
+              添加日期
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="location">
+              操作
+            </th>
+          </tr>
+        </thead>
+        <tbody id="hive-search-tbody">
+        </tbody>
+   		</table>
+  	</div>
+  </div>
+  <textarea id="hive-search-tmpl" style="display: none;">
+    {#foreach $T.items as d}
+      <tr data-deviceId="{$T.d.id}">
+        <td>
+          {$T.d.name}
+        </td>
+        <td>
+          {$T.d.admin}
+        </td>
+        <td>
+          {$T.d.temp}
+        </td>
+        <td>
+          {$T.d.hum}
+        </td>
+        <td>
+          {$T.d.shake}
+        </td>
+        <td>
+          {$T.d.location}
+        </td>
+        <td>
+          {$T.d.energy}
+        </td>
+        <td>
+          {$T.d.image}
+        </td>
+        <td>
+          {$T.d.network}
+        </td>
+        <td>
+          {$T.d.created_at}
+        </td>
+        <td>
+          <span>
+            <i class="fa fa-times"></i>
+            <a href="javascript:void(0);" class="hive-search-deleteLink">删除</a>
+          </span>
+        </td>
+      </tr>
+    {#/for}
+	</textarea>
+</div>

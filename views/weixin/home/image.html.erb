@@ -1,0 +1,12 @@
+<div class="wx-image" id="wx-image">
+    <div class="row hive-grid-row" data-bind="foreach: images">
+        <div class="col-md-3 col-sm-4 col-xs-6 hive-grid-col" data-bind="click: $root.gridClick">
+            <div class="hive-picture-cell" data-bind="attr: {style: gridStyle}">
+                <div data-bind="css: gridColor">
+                    <p data-bind="text: name" class="cell-name"></p>
+                </div>
+            </div>
+            <i data-bind="css: battery"></i>
+        </div>
+    </div>
+</div>

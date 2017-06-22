@@ -1,0 +1,1619 @@
+// General
+.innormal
+  background-color: #EC5900
+  color: white
+//
+
+// menu bar
+.page-sidebar-closed .page-sidebar-fixed .page-sidebar:hover
+  .page-sidebar-menu 
+    li.active > a
+      background: #FFD70D
+
+.page-sidebar-closed .page-sidebar-fixed .page-sidebar:hover 
+  .page-sidebar-menu
+    li.active.open > a
+      background: #FFD70D
+
+.page-sidebar .page-sidebar-menu > li.active > a, .page-sidebar .page-sidebar-menu > li.active.open > a
+  background: #FFD70D
+.page-sidebar .page-sidebar-menu
+  span.h-menu-alarm
+    background-color: #EC5900
+    width: 30px
+    text-align: center
+    color: white
+
+
+// end
+
+// top-menu
+.page-header.navbar 
+  .top-menu
+    float: none
+    a
+      padding-bottom: 11px
+      &:link, &:visited, &:hover, &:active
+        color: #c6cfda
+      &:visited, &:hover, &:active
+        background-color: #3f4f62
+  .hive-search-link
+    width: 0px
+    top: 5px
+    position: relative
+    float: right
+    transition: width 0.3s
+    -webkit-transition: width 0.3s
+    -o-transition: width 0.3s
+    -moz-transition: width 0.3s
+    height: 33px
+    input
+      width: 100%
+      height: 100%
+      border: 0px
+      padding: 0px
+    &.search-open
+      width: 140px
+      input
+        padding: 6px 12px
+  .search-btn
+    top: 5px
+    position: relative
+    float: right
+    color: #999
+    height: 33px
+    line-height: 32px
+    width: 33px
+    cursor: pointer
+    text-align: center
+    background-color: initial
+    transition: 0.3s
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    -moz-transition: 0.3s
+    &.btn-active
+      background-color: #FFCC00
+    
+      
+  .page-logo 
+    .logo-default
+      margin-top: 8px
+      width: 143px
+      height: 28px
+  .menu-toggler
+    background-image: image-url('sidebar_inline_toggler_icon_darkblue')
+   
+// end
+
+// overwrite calendar
+.fc-view
+  .fc-widget-header
+    display: none !important
+  .fc-row
+    min-height: 2.3em !important
+// End
+
+.page-sidebar
+  .page-sidebar-menu
+    overflow: hidden
+    & > li
+      border-bottom: 1px solid #111
+      -webkit-box-shadow: 0 .4px .1px 0 #777
+      -moz-box-shadow: 0 .4px .1px 0 #777
+      box-shadow: 0 .4px .1px 0 #777
+      & i[class^="icon-icon-"]
+        font-size: 23px
+    .sub-menu
+      margin: 0
+      background-color: rgb(50, 57, 66)
+      & li
+        margin: 0px !important
+
+.page-container-bg-solid
+  .page-content
+    background-color: #F1F1F2
+    .col-lg-3, .col-md-3, .col-sm-6, .col-xs-12,
+    .col-md-6, .col-sm-6
+      padding: 0 5px
+  .page-bar
+    margin-bottom: 25px
+    & li
+      position: relative
+      color: #888
+      &.hive-pageBar-latesTime
+        left: 15px
+        &.hive-page-hidden
+          display: none
+      &.hive-pageBar-sortBtn
+        &.hive-page-hidden
+          display: none
+        position: absolute !important
+        right: 20px
+        top: 10px
+        & i
+          padding-left: 5px
+          cursor: pointer
+          color: #888
+          transition: 1s
+          &:hover
+            color: #444
+    .hive-pageBar-quickPage
+      position: absolute
+      border: solid 1px #ddd
+      top: -65px
+      right: 10px
+      background-color: #FFF
+      transition: 0.1s ease
+      opacity: 0
+      &.quickPage-show
+        opacity: 1
+        top: 0px
+      & div
+        text-align: center
+        width: 55px
+        color: #555
+        height: 20px
+        &:hover
+          background-color: #EFEEEF
+          cursor: pointer
+
+.dashboard-stat.blue-madison
+  background-color: #1AC2F4
+
+.dashboard-stat.red-intense
+  background-color: #EC5900
+
+.dashboard-stat.green-haze
+  background-color: #39AB77
+
+.dashboard-stat.yellow-lemon
+  backgounrd-color: #FFD70D
+
+.dashboard-stat
+  height: 116px
+  .details
+    position: static
+    padding: 0  
+    .number
+      font-size: 52px
+      padding-top: 29px
+      text-align: center
+      font-family: "Open-Sans-Light"  
+    .desc
+      font-size: 12px
+      padding-top: 14px
+      text-align: center
+.hive-index-time
+  font-size: 13px !important
+  
+.device-image
+  height: 230px
+  width: 100%
+  position: relative
+  font-size: 15px
+  text-align: center
+  line-height: 170px
+  color: #777
+  background-size: 100%
+  background-position-y: 50%
+
+.hive-index-imageNum
+  font-size: 14px
+  position: absolute
+  top: 100px
+  left: 20px
+  color: #666
+.portlet.light
+  overflow: hidden
+  border: 1px solid #aaa !important
+  padding: 0
+  .portlet-title
+    position: relative
+    padding: 0 12px
+    margin-bottom: 0
+    min-height: 0
+    border-bottom: 1px solid #aaa
+    background-color: #F1F1F2
+    overflow: hidden
+    .chart-options
+      display: inline-block
+      position: absolute
+      right: 0
+      top: 0
+      & > span:nth-child(2)
+        float: right
+      & > span
+        display: inline-block
+        width: 45px
+        height: 39px
+        text-align: center
+        font-size: 14px
+        line-height: 36px
+        border-left: 1px solid #ccc
+  .portlet-body
+    padding-top: 0
+    .caption > .caption-subject
+      font-size: 14px
+  .portlet-title
+    .caption i
+      font-size: 23px !important
+.hive-icon-battery-right
+  position: absolute
+  right: 10px
+  top: 10px
+  font-size: 15px
+  color: white
+.hive-icon-battery-left
+  position: absolute
+  left: 7px
+  top: 7px
+  font-size: 15px
+  color: white
+
+.hive-date-right
+  float: right
+  font-size: 16px
+  
+.hive-icon
+  font-size: 18px !important
+.hive-icon-right
+  transition: 0.5s
+  cursor: pointer
+  position: relative
+  top: 1px
+  color: #777
+  font-size: 18px !important
+
+.hive-icon-right:hover
+  opacity: 0.5
+
+.modal-content
+  &.image-height-control
+    height: initial !important
+    & .modal-body
+      height: initial !important
+.modal-header
+  height: 10%
+.modal-body
+  height: 90% 
+  & img
+    height: 100%
+    width: 100%
+    background-size: 100% 100% !important
+
+.modal-backdrop
+  display: none !important
+
+.modal-header
+  & i
+    color: red
+    cursor: pointer
+    position: absolute
+    right: 20px
+    top: 15px
+    font-size: 17px 
+
+.modal-header
+  .btn-group
+    float: right
+
+.hive-clear-error
+  right: -1px !important
+
+.quick-icon-add
+  margin-left: 22px
+  cursor: pointer
+
+.quick-modal-hide
+  display: none
+
+.quick-form-hide
+  display: none
+
+.hive-quick-clear
+  clear: both
+body .hive-porlet-img
+  border: 0px !important
+.hive-porlet-img-title
+  border-style: solid
+  border-color: #aaa
+  border: 0px
+.hive-quick-deviceName
+  font-family: Open-Sans-Light
+  font-size: 29px
+  font-weight: bold
+  
+.hive-icon-mainSn
+  position: absolute
+  left: 0px
+  top: 20px
+  width: 30px
+.caption
+  width: 100%
+
+.page-quick-sidebar-wrapper
+  width: 60%
+  right: -60%
+  top: 0
+  z-index: 9997 // z-index of top navbar is 9995
+  color: black
+  background-color: white
+  overflow: visible
+  .nav-justified, p
+    background-color: white
+    color: black
+    max-height: 768px
+    max-height: 100vh
+    overflow-y: scroll
+    h1
+      display: inline-block
+      margin: 0
+      padding: 15px 0 0 17px
+    .instance-action
+      padding: 21px 17px 0 0
+      span:first-child
+        margin-right: -2px
+      span
+        display: inline-block
+        margin-right: -3px
+        background-color: #eee
+        width: 35px
+        height: 26px
+        text-align: center
+        line-height: 2
+        .fa 
+          font-size: 12px
+    p
+      padding-left: 18px
+      font-size: 15px
+      color: #aaa
+      margin-bottom: 7px
+    .sensors-status
+      padding-left: 18px
+      .sensor-status
+        display: inline-block
+        span.hexagon
+          display: block
+          width: 50px
+          height: 50px
+          background-color: #FFD70D
+          margin-right: 5px
+          text-align: center
+          line-height: 4
+          font-size: 12px
+          margin-bottom: 7px
+        span.status
+          text-align: center
+          width: 50px
+          font-size: 12px
+          display: block
+          margin-bottom: 4px
+        .buy-or-recharge
+          background-color: #FFD70D
+    .status-info
+      margin-right: 15px
+      margin-left: 6px
+      margin-top: 10px
+      .col-md-6
+        padding-right: 0
+        padding-left: 5px
+        & > div
+          position: relative
+          width: 100%
+          height: 116px
+          margin-top: 5px
+          .number
+            text-align: center
+            font-size: 52px
+            color: white
+            padding-top: 11px
+          .desc
+            font-size: 12px
+            text-align: center
+            color: white
+            margin-top: -3px
+          & i[class^="icon-icon-"]
+            position: absolute
+            top: 6px
+            right: 6px
+            color: white
+            font-size: 20px
+  .row.stat-chart
+    margin-right: 0px
+    margin-left: 0px
+    margin-top: 13px
+  .portlet.light
+    margin-bottom: 0px
+
+  .row.stat-map
+    margin-right: 0px
+    margin-left: 0px
+    margin-top: 13px
+
+  #stat-mapContainer
+    height: 228px
+
+  #stat-mapContainer1
+    height: 400px
+
+.nav-justified hr
+  border-color: #ddd
+  margin-left: 15px
+  margin-right: 15px
+
+.hive-quick-numberBox
+  width: 100%
+  padding-top: 11px
+
+.hive-quick-numberBox > div
+  display: inline
+
+.hive-quick-number
+  text-align: center
+  font-size: 52px
+  color: #FFF
+  font-family: 'Open-Sans-Light'
+  font-weight: 100
+
+.hive-quick-humiture .hive-quick-number
+  text-align: left
+
+.hive-quick-humiture .hive-quick-desc
+  text-align: left
+
+.hive-quick-temperature .hive-quick-number
+  text-align: right
+
+.hive-quick-temperature .hive-quick-desc
+  text-align: right
+
+.hive-quick-temperature
+  text-align: right
+  width: 40%
+  float: left
+  
+.hive-quick-symbol
+  text-align: center
+  font-size: 34px
+  width: 20%
+  float: left
+  padding-top: 17px
+
+.hive-quick-humiture
+  text-align: left
+  float: right
+  width: 40%
+
+.hive-quick-desc
+  font-size: 12px
+  text-align: center
+  color: #FFF
+  margin-top: -10px
+
+#hive-quick-chart-humiture
+  height: 400px
+
+#hive-quick-chart-temperature
+  height: 400px
+
+#hive-quick-chart-energyComsumption
+  height: 400px
+
+#hive-quick-chart-flowRate
+  height: 400px
+
+#hive-quick-chart-shaking
+  height: 400px
+
+.hive-quick-confirm
+  text-align: center
+  margin-bottom: 20px
+
+.hive-quick-confirm input
+  width: 95px
+  height: 25px
+  border: 0px
+  color: white
+
+.hive-quick-hide
+  display: none
+
+.hive-quick-confirm-save
+  background-color: #FCCF19
+ 
+.hive-quick-confirm-cancel
+  background-color: #D7572C
+
+.hive-quick-form
+  min-height: 254px
+  & i
+    color: #777 !important
+    font-size: 18px
+    &.fa-minus
+      color: red !important
+    &.tooltips
+      right: 25px
+      z-index: 10000
+      cursor: pointer
+    &.fa-check
+      color: green !important
+    &.fa-times
+      color: red !important
+
+.hive-quick-form input
+  color: #666
+  width: 100%
+
+.hive-quick-form select
+  color: #666
+  width: 100%
+  background-color: white
+
+.delete-padding
+  padding-right: 0px
+  padding-left: 8px
+
+.hive-quick-form > div
+  margin-left: 0px
+  margin-right: 0px
+
+.hive-quick-form-line
+  border-top: #ccc 1px solid
+  margin-top: 25px
+  min-width: 77px
+  
+.hive-quick-form-line div
+  border-bottom: #ccc 1px solid
+  border-left: #ccc 1px solid
+  width: 50%
+  height: 90px
+  margin-left: 50%
+.hive-quick-add
+  position: relative
+  left: -17px
+  bottom: -15px
+.hive-quick-form-left
+  float: left
+  text-align: right
+  padding: 0px
+  width: 40%
+  position: relative
+  left: 10px
+  & input , select
+    width: 80%
+    margin: 0px auto
+  & > div
+    margin: 10px 0px
+
+.hive-quick-form-middle
+  float: left
+  width: 20%
+
+.hive-quick-form-right
+  float: right
+  padding: 0px
+  width: 40%
+  & .fa-minus
+    color: red
+    cursor: pointer
+  & input
+    width: 80%
+    margin: 0px auto
+  & > div > i
+    display: inline
+  & > div
+    position: relative
+    & > div
+      margin: 10px 0px
+  & .hive-quick-first-icon
+    position: absolute
+    left: -7px
+    top: 0px
+
+
+.hive-quick-form-right > i
+  display: inline
+
+.hive-quick-form-left > i
+  display: inline
+
+
+.hive-modal-header
+  background-color: #F1F1F2
+
+.hive-modal-subject
+  font-size: 16px
+  color: #666
+
+.hive-details-map-cover
+  position: absolute
+  top: 0px
+  left: 0px
+  right: 0px
+  bottom: 0px
+  z-index: 10000
+
+
+.trapezoid-toggler
+  display: none
+  background-color: white
+  height: 57px
+  width: 30px
+  position: absolute
+  left: -30px
+  cursor: pointer
+  padding-left: 10px
+  line-height: 54px
+  top: 12px
+  .quick-triangle
+    width: 0px
+    height: 0px
+    border: dashed rgba(0,0,0,0)
+    border-width: 8px 15px
+    border-right-color: #FFF
+    position: absolute
+    left: 0px
+  .page-quick-top-triangle
+    border-bottom-color: #FFF  
+    top: -15px
+  .page-quick-bottom-triangle
+    border-top-color: #FFF
+    bottom: -15px
+  .fa-arrow-left
+    font-size: 12px
+
+.quick-sidebar-blackbox
+  position: fixed
+  top: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0, .7)
+  z-index: 9996
+  display: none
+
+.image-stat
+  cursor: pointer
+
+.location-stat
+  cursor: pointer
+
+// page summary start
+
+#hive-device-summary
+  & a
+    text-decoration: none
+
+// page summart end
+
+
+//index Start
+.chart-options span
+  background-color: #F1F1F2
+  &:hover
+    cursor: pointer
+
+span.chart-option-actived
+  cursor: default
+  background-color: #FFCC55
+
+
+//index End
+
+//newDevice Start
+.hive-newDevice-formWrapper
+  width: 100%
+  border: #bbb 1px solid
+  background-color: #FFF
+
+.hive-newDevice-formHeader
+  border-bottom: #bbb 1px solid
+  background-color: #EFEEEF
+  & div
+    padding-top: 7px
+    padding-bottom: 7px
+  & .text-center
+    border-left: #bbb 1px solid
+  & .hive-quick-clear
+    padding: 0px
+  & *
+    color: #777
+.hive-newDevice-formBody
+  margin: 0px auto
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before
+  color: red
+.hive-newDevice-formBodyContent
+  width: 90%
+  margin: 20px auto
+  list-style: none
+  & i
+    font-size: 20px
+  & > li
+    & > div
+      float: left
+  & .fa-check
+    color: green
+  & .fa-question-circle
+    color: #bbb
+  & i[data-toggle]
+    cursor: pointer
+  & input , select
+    color: #555
+  & li:nth-child(2) i
+    position: relative
+    top: 9px
+    left: 5px
+  & .hive-newDevice-formBodyContent-formLeft
+    margin-left: 5px
+    width: 20%
+    position: relative
+    & > div
+      margin-bottom: 20px
+    .hive-newDevice-img
+      position: absolute
+      width: 35px
+      top: 6px
+      left: -35px
+  & .hive-newDevice-formBodyContent-formMiddle
+    width: 10%
+    & .hive-newDevice-lineBox
+      border-top: #ddd 1px solid
+      margin: 15px 10px 10px 10px
+      & > div
+        height: 53px
+        border-left: #ddd 1px solid
+        border-bottom: #ddd 1px solid
+        margin-left: 50%
+  & .hive-newDevice-formBodyContent-formRight
+    width: 50%
+    & > div
+      height: 34px
+      margin-bottom: 20px
+      & > div
+        float: left
+        width: 42%
+      & > i.fa-spin, & > i[class^="icon-icon-"]
+        float: left
+        right: 3px
+      & > i.fa-spin
+        margin-right: 7px
+      & > i.fa-minus
+        left: 3px
+      & > i
+        position: relative
+        top: 9px
+      & div:nth-child(2)
+        margin-right: 10px
+
+  & .hive-newDevice-plus
+    cursor: pointer
+    color: red !important
+    left: -3px
+  & .hive-newDevice-hide
+    display: none
+  & .fa-minus
+    cursor: pointer
+    color: red
+
+
+.hive-newDevice-devices-table
+  width: 100%
+  margin-top: 15px
+
+  & td
+    background-color: #FFF
+  & th , td
+    text-align: center
+  & tr:hover
+    cursor: pointer
+    & td
+      background-color: #EFEEEF
+  & th:hover
+    background-color: #DDD
+
+.hive-newDevice-buttonBox
+  width: 80%
+  margin: 0px auto
+  border-top: #ddd 1px solid
+  text-align: center
+  padding-top: 20px
+  padding-bottom: 20px
+  & input
+    width: 105px
+    border: 0px
+    padding: 5px
+    color: snow
+  & [class$=Save]
+    margin-right: 3px
+    background-color: #FCCF19
+  & [class$=Cancel]
+    margin-left: 3px
+    background-color: #D7572C
+
+
+//newDevice End
+
+// devices //
+.hive-table
+  margin: -10px
+  .hive-sortable
+    &:hover
+      background-color: #F7CA18
+      cursor: pointer
+  .table.table-bordered
+    border: 0px
+    thead
+      tr
+        background-color: #eee
+        th
+          text-align: center
+          &:first-child
+            border-left: 0px !important
+          &:last-child
+            border-right: 0px !important
+    tr
+      background-color: white
+      td 
+        text-align: center
+        position: relative
+        &:first-child
+          border-left: 0px !important
+        &:last-child
+          border-right: 0px !important
+        span
+          margin-right: 10px
+          a
+            &:link, &:visited, &:hover, &:active
+              text-decoration: none
+              color: inherit
+        span.groupMarker
+          position: absolute
+          left: 0px
+          width: 5px
+          height: 100%
+          top: 0px
+      &:hover
+        background-color: #eee
+    tr.hive-table-rowWarning
+      background-color: #FAEDE8
+      td.hive-table-cellWarning
+        background-color: #D7572C
+        color: white
+        & .hive-icon-battery-right
+          color: #FFF !important
+    & tbody tr:hover
+      cursor: pointer
+      background-color: #EFEEEF !important
+    & .hive-icon-battery-right
+      color: #777
+#hive-devices-table table
+  border: solid 1px #ddd
+.hive-device-formBodyContent
+  width: 90%
+  margin: 20px auto
+  list-style: none
+  & > li
+    & > div
+      float: left
+  & .fa-check
+    color: green
+  & .fa-question-circle
+    color: #bbb
+  & i[data-toggle]
+    cursor: pointer
+  & input , select
+    color: #555
+  & li:nth-child(1) i
+    position: relative
+    top: 9px
+  & li:nth-child(3) i
+    position: relative
+    top: 9px
+    left: 5px
+  & li:nth-child(6) div
+    margin-right: 10px
+    width: 17%
+
+  & li:nth-child(5) div
+    margin: 0px 5px
+
+  & li:nth-child(7) div
+    width: 17%
+
+  & .hive-device-formBodyContent-formLeft
+    margin-left: 5px
+    width: 20%
+    & > div
+      margin-bottom: 20px
+  & .hive-device-formBodyContent-formMiddle
+    width: 10%
+    & .hive-device-lineBox
+      border-top: #ddd 1px solid
+      margin: 15px 10px 10px 10px
+      & > div
+        height: 53px
+        border-left: #ddd 1px solid
+        border-bottom: #ddd 1px solid
+        margin-left: 50%
+  & .hive-device-formBodyContent-formRight
+    width: 20%
+    & > div
+      height: 34px
+      margin-bottom: 20px
+      & > div
+        width: 100%
+        margin-bottom: 20px
+      & > i.fa-credit-card
+        float: left
+        right: 3px
+      & > i.fa-minus
+        left: 3px
+      & > i
+        position: relative
+        top: 9px
+      & div:nth-child(2)
+        margin-right: 10px
+// end
+
+
+// map
+#body_home_map
+  .page-content
+    position: relative
+.hive-map
+  height: 100%
+  border: #ddd 1px solid
+  font-weight: 200
+
+.hive-map-header
+  height: 30px
+  width: 100%
+  border-bottom: #ddd 1px solid
+
+.hive-map
+  span
+    height: 30px
+    color: #777
+
+.hive-map-span1
+  width: 70%
+  float: left
+  text-align: left
+  padding-top: 5px
+  padding-left: 5px
+  text-decoration: none
+
+.hive-map-span2
+  width: 5%
+  float: right
+  padding-top: 5px
+  text-align: center
+  border-left: #ddd 1px solid
+  min-width: 35px
+
+.hive-map-span3
+  width: 5%
+  float: right
+  padding-top: 5px
+  text-align: center
+  border-left: #ddd 1px solid
+  min-width: 35px
+
+.hive-map-span2
+  &:hover
+    text-decoration: underline
+    cursor: pointer
+
+.hive-map-span3
+  &:hover
+    text-decoration: underline
+    cursor: pointer
+
+.hive-map-span-actived
+  background-color: #FCCF19
+  &:hover
+    cursor: default
+
+.hive-map-body
+  min-height: 550px
+
+.InfoWindows
+
+// humiture
+
+.hive-grid-row
+  width: 98%
+  margin: 0px auto
+  text-align: center
+
+.col-md-3.col-sm-4.col-xs-6.hive-grid-col
+  padding-left: 3px
+  padding-right: 3px
+  padding-bottom: 3px
+  padding-top: 3px
+  position: relative
+
+.hive-grid-cell
+  width: 100%
+  height: 100%
+  background-color: #FFCC00
+  background-repeat: no-repeat
+  text-align: center
+  height: 110px
+
+.hive-grid-cell:hover *
+  cursor: pointer
+
+.cell-red
+  background-color: #DB5323 !important
+
+.cell-label
+  margin-top: 0px
+  color: #FFF
+  font-family: 'Open-Sans-Light'
+  font-weight: 100
+
+.cell-labelText
+  font-size: 2.1em
+
+.cell-label-symbol
+  margin-left: 8px
+  margin-right: 8px
+  font-size: 1.1em
+
+.cell-name 
+  color: white
+  font-weight: 100
+  font-family: Open-Sans-Light
+  text-align: left
+  padding-left: 7px
+  padding-top: 7px
+  letter-spacing: 1px
+  margin-bottom: 4px
+
+#body_home_humiture .page-content
+  padding: 0px !important
+  font-size: 100%
+
+// css of page shake
+
+#body_home_shake .page-content
+  padding: 0px !important
+  font-size: 100%
+
+// css of page picture
+
+.hive-picture-cell
+  width: 100%
+  background-repeat: no-repeat
+  height: 110px
+  cursor: pointer
+
+#body_home_picture .page-content
+  padding: 0px !important
+  font-size: 100%
+
+.hive-picture-black
+  background-color: black
+  opacity: 0.5
+
+// css of page energy
+
+#body_home_energy .page-content
+  padding: 0px !important
+  font-size: 100%
+
+// css of group page
+#hive-page-content-group
+  .hive-group-section
+    border: 1px solid #ddd
+  .hive-group-formContent
+    width: 92%
+    margin: 30px auto
+    & input
+      border: #ddd 1px solid
+      width: 80%
+      color: #555
+
+  .hive-group-newForm-newGroup
+    width: 25%
+    float: left
+    text-align: right
+    padding-right: 10px
+
+  .hive-group-newForm-admin
+    width: 25%
+    float: left
+    padding-left: 10px
+
+  .hive-group-newForm-adminTel
+    width: 36%
+    & input
+      display: inline
+      width: 20%
+  .hive-devices-switch
+    text-decoration: none
+    &:hover
+      text-decoration: underline !important
+  .hive-devices-deleteLink
+    &:hover
+      text-decoration: underline !important
+
+  #hive-group-newForm-info
+    color: #bbb
+
+  .hive-group-newForm-newGroup-group
+    margin-bottom: 15px
+
+  .hive-group-newForm-admin-account
+    margin-bottom: 15px
+
+  .hive-group-form-line
+    width: 8%
+
+  .hive-group-line
+    & div
+      height: 40px
+
+  .hive-group-newBtn
+    border: 1px solid #ddd
+    border-top-width: 0px
+    border-bottom-width: 0px
+    padding-top: 0px
+    &:hover
+      cursor: pointer
+      background-color: #FFCC55
+  .hive-group-openBtn
+    &:hover
+      cursor: pointer
+      background-color: #F7CA18      
+  .header
+    border-bottom-style: solid
+    border-bottom-width: 1px
+    border-bottom-color: #ddd
+  .cell
+    height: 30px
+    line-height: 30px
+  .text-center
+    text-align: center
+  .hive-group-newForm
+    background-color: white
+    min-height: 200px
+    display: none
+    .fa-stop
+      &:before
+      font-size: 20px
+  .hive-group-newForm-btnArea
+    text-align: center
+    padding-bottom: 20px
+    input
+      width: 150px
+    & hr
+      width: 90%
+      margin: 20px auto
+  .hive-group-list
+    background-color: white
+    min-height: 200px
+    max-height: 200px
+    padding: 20px
+    overflow-y: hidden
+    .col-md-3
+      max-width: 220px
+      margin-bottom: 15px
+    .grid-cell-editBar
+      font-size: 13px
+      padding: 3px 0px 0px 12px
+    .grid-cell
+      display: block
+      padding-left: 6px
+      line-height: 1.42857143
+      -webkit-transition: border .2s ease-in-out
+      -o-transition: border .2s ease-in-out
+      transition: border .2s ease-in-out
+    .grid-cell-content
+      min-height: 126px
+      width: 100%
+      background-color: white
+      padding-left: 5px
+      h4
+        padding-top: 4px
+      .table
+        margin-bottom: 0px
+        tr
+          td
+            border-top: none
+            padding: 3px
+          td:nth-child(1)
+            width: 60px
+          td:nth-child(2)
+            text-align: left
+  .table
+    margin-bottom: 0px
+  .table-footer
+    td
+      border: none
+      a
+        color: black
+        text-decoration: underline
+  .hive-table
+    border: 1px solid #ddd
+  #hive-assign-gList
+    label
+      margin-right: 15px
+      font-size: 13px
+
+
+//Responsive font of label-symbol and labelText on page of humiture
+
+
+
+@media (min-width: 640px) 
+  .cell-label-symbol 
+    font-size: 1.1em
+  .cell-labelText
+    font-size: 3.0em
+  .cell-name
+    margin-bottom: 9px
+
+@media (min-width: 1024px) 
+  .cell-label-symbol 
+    font-size: 1.4em
+  .cell-labelText
+    font-size: 3.3em
+  .cell-name
+    margin-bottom: 7px
+
+@media (min-width: 1280px) 
+  .cell-label-symbol
+    font-size: 1.7em
+  .cell-labelText
+    font-size: 3.5em
+  .cell-name
+    margin-bottom: 3px
+
+@media (min-width: 1360px) 
+  .cell-label-symbol
+    font-size: 2em
+  .cell-labelText
+    font-size: 3.7em
+  .cell-name
+    margin-bottom: 3px
+
+
+//End of Responsive font
+
+//quick-bg-bar Start
+.page-quick-bg-bar
+  position: fixed
+  height: 100%
+  width: 80%
+  right: -80%
+  top: 0px
+  bottom: 0px
+  color: black
+  background-color: white
+  overflow: visible
+  transition: 0.5s ease
+  z-index: 10000
+  & .bgBar-toggler
+    display: none
+    text-align: center
+    background-color: #FFF
+    width: 40px
+    position: absolute
+    left: -34px
+    top: 10px
+    .quick-triangle
+      width: 0px
+      height: 0px
+      border: dashed rgba(0,0,0,0)
+      border-width: 10px 20px
+      border-right-color: #FFF
+      position: absolute
+      left: 0px
+    .page-quick-top-triangle
+      border-bottom-color: #FFF  
+      top: -20px
+    .page-quick-bottom-triangle
+      border-top-color: #FFF
+      bottom: -20px
+    & i
+      opacity: 0.4
+      transition: 0.5s
+      cursor: pointer
+      margin: 20px auto
+      font-size: 18px
+      display: block
+      &:hover
+        opacity: 1
+      &.fa-arrow-right
+        font-size: 13px
+      &.fa-tint
+        font-size: 16px
+  & .quick-bg-bar-content
+    height: 100%
+    width: 97%
+    margin: 0px auto
+    & .quick-bg-barBox
+      height: 90%
+      & .portlet
+        height: 100%
+        & #quick-bg-calendar
+          height: 30px
+          width: 80%
+          margin: 10px auto
+          & i
+            padding: 5px
+            cursor: pointer
+            color: silver
+          & span
+            font-size: 14px
+            color: silver
+            font-family: Open-Sans-Light
+            cursor: pointer
+          & .bg-calendar-left
+            text-align: left
+          & .bg-calendar-middle
+            text-align: center
+            & span
+              font-size: 16px
+              color: #444
+          & .bg-calendar-right
+            text-align: right
+        & .portlet-body
+          height: 90%
+          & > div
+            height: 100%
+            & > div
+              height: 97%
+              padding-bottom: 20px
+              & > div
+                height: 100%
+                padding: 5px
+          #bg-image
+            overflow: auto
+            & .hive-picture-black
+              height: 200px
+            & > div
+              padding: 3px !important
+
+            & div
+              height: initial
+              min-height: 220px
+
+  & .bg-chart-option-actived
+    cursor: default
+    background-color: #FFCC55
+.page-quick-bg-bar-show
+  right: 0px
+.icons-highlignt
+  opacity: 1 !important
+.bg-no-data
+  font-size: 18px
+  margin-top: 25px
+  text-align: center
+//quick-bg-bar End
+
+
+//settings Start
+
+.hive-settings
+  border: solid 1px #DDD
+  padding-top: 50px
+  padding-bottom: 50px
+  width: 80%
+  margin: 0px auto
+  & li
+    list-style: none
+    display: inline
+  & input
+    width: 120px
+    display: inline
+  & > div
+    margin-top: 15px
+    text-align: center
+    min-height: 70px
+  & .hive-theme-fontColor
+    color: #FFCC00
+    width: 100px
+    padding-left: 30px
+  & .hive-settings-theme
+    & span
+      display: list-item
+      line-height: 35px
+      font-size: 15px
+    > span
+      display: block
+    & ul
+      display: inline-block
+      padding: 0px
+      height: 50px
+    & li span
+      width: 40px
+      height: 40px
+      border: solid 2px white
+      cursor: pointer
+    & li
+      border: solid 2px #aaaaaa
+      margin-right: 20px
+      display: inline-block
+      &:hover
+        border: solid 2px #31A5E7
+    & li:nth-child(1)
+      background-color: #87CEFF
+    & li:nth-child(2)
+      background-color: #CD96CD
+    & li:nth-child(3)
+      background-color: #66CD00
+    & li:nth-child(4)
+      background-color: #FFCC00
+    & li:nth-child(5)
+      background-color: #9F79EE
+  & .hive-settings-logo
+    & .hive-theme-logoContainer
+      margin-top: 10px
+    & .hive-settings-logo-name
+      line-height: 35px
+      padding-top: 7px
+      font-size: 17px
+      display: block
+    & .hive-settings-logo-size
+      margin-top: 16px
+    & input
+      width: initial
+      margin-top: 9px
+    & .hive-theme-preview
+      width: 100px
+      height: 50px
+      background-size: 100% 100%
+      &.hive-theme-preview-hide
+        display: none
+  & .hive-settings-alarm
+    & .hive-settings-alarm-name
+      font-size: 16px
+      padding-top: 15px
+      display: block
+    & .hive-settings-alarm-label
+      background-color: #FFF
+      padding: 9px 16px
+      text-align: center
+      margin-right: 15px
+    & .hive-settings-alarm-shake
+      & .hive-settings-alarm-shakeOptions
+        background-color: #FFF
+        border: solid 1px #DDD
+        padding: 8px 13px
+        cursor: pointer
+        margin-right: 10px
+        &:hover
+          border: solid 1px #31A5E7
+    & ul
+      padding: 0px
+      width: 50%
+      margin: 0px auto
+    & li
+      display: block
+      & *
+        float: left
+        margin-bottom: 10px
+    & input
+      margin-right: 20px
+  & .hive-settings-dataGap
+    & > span
+      display: block
+      font-size: 16px
+      padding-top: 5px
+    & ul
+      padding-left: 20px
+      & li
+        background-color: #FFF
+        margin-right: 15px
+        padding: 6px 10px
+        border: solid 1px #DDD
+        cursor: pointer
+        display: inline-block
+        margin-bottom: 10px
+        &:hover
+          border: solid 1px #31A5E7
+  & .hive-settings-button
+    border-bottom: 0px
+    text-align: center
+    padding: 0px
+    & input
+      margin-right: 15px
+      width: 70px
+      &:hover
+        border: solid 1px #31A5E7
+
+//settings End
+
+//search Start
+
+.hive-serach-container
+  & .hive-search-header
+    padding: 5px
+    position: relative
+    & input
+      display: inline
+      width: 110px
+    & .hive-search-dateContainer
+      position: absolute
+      top: 0x
+      right: 10px
+    & select
+      width: 100px
+      margin-right: 10px
+      height: 30px
+  & .hive-search-table
+    margin-top: 40px
+    & th, td
+      text-align: center
+    & tbody tr
+      cursor: pointer
+      background-color: #FFF
+      &:hover
+        background-color: #EFEEEF !important
+
+
+.hive-search-iconLeft
+  position: absolute
+  top: 5px
+  left: 5px
+.hive-search-iconRight
+  position: absolute
+  top: 5px
+  right: 5px
+//search End
+
+//page inspection start
+
+.inspection-cell
+  & > div:nth-child(2)
+    margin-top: -16px
+  & > div:nth-child(3)
+    margin-top: -11px
+  & .inspection-label
+    color: #FFF
+    font-weight: 100
+
+//page inspection end
+
+//inbox
+div.checker 
+  span
+    background-image: image-url("sprite.png")
+
+//end
+
+
+//responsive layout start
+.hive-menu-sub-menu
+  display: none !important
+@media (max-width: 991px)
+  .page-sidebar
+    margin: 0px !important      
+    .hive-menu-sub-menu
+      display: block !important
+      & i
+        margin-left: 4px !important
+        margin-right: 10px !important
+        font-size: 15px !important
+  .page-header
+    .search-open
+      width: 100px
+        
+    .top-menu
+      display: none !important
+
+  .page-content-wrapper
+    .hive-index-imageNum
+      top: 50px
+      left: 7px
+    .page-bar
+      margin-bottom: 10px
+    #hive-device-summary .dashboard-stat
+      margin: 0px
+
+
+//responsive layout end

@@ -1,0 +1,14 @@
+<div class="wx-search" id="wx-search">
+	<ul data-bind="foreach: searchs">
+		<li class="clearfix wx-theme-borderColor" data-bind="css: {'error-device' : isError},attr: {'data-id': id}">
+			<span>
+				<p data-bind="text: name"></p>
+				<p data-bind="text: address"></p>
+			</span>
+			<span>
+				<p>管理员</p>
+				<p data-bind="text: admin" class="wx-search-admin"></p>
+			</span>
+		</li>
+	</ul>
+</div>

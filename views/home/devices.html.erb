@@ -1,0 +1,101 @@
+<% content_for :title, '设备列表' %>
+<div class="page-content">
+    <%= render "shared/page_breadcrumb", icon: 'fa-list' %>
+    
+    <%= render "shared/device_summary" %>
+    
+    <div class="row hive-table" id="hive-devices-table">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="hive-sortable hive-selected" data-sortType="name">
+              设备名称
+              <i class="fa fa-angle-up"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="temp">
+              温度
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="hum">
+              湿度
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="shake">
+              震动
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="ray">
+              人流
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable hide" data-sortType="energy">
+              能耗
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="location">
+              位置
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th>影像</th>
+            <th>网络</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="hive-devices-tbody">
+        </tbody>
+      </table>
+    </div>
+    <textarea id="hive-devices-tmpl" style="display: none;">
+      {#foreach $T.items as d}
+        <tr data-deviceId="{$T.d.id}" class={#if ($T.d.hasWarning == true)}"hive-table-rowWarning"{#else}""{#/if}>
+          <td>
+            {$T.d.name}
+          </td>
+          <td class={#if ($T.d.temperatureWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.humitures[0].temperature}
+            <i class={#if ($T.d.temperaturePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.humidityWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.humitures[0].humidity}
+            <i class={#if ($T.d.temperaturePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.shakeWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.shakes[0].shake}
+            <i class={#if ($T.d.shakePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.rayWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.rays[0].count}
+            <i class={#if ($T.d.rayPower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.energyWarn == true)}"hive-table-cellWarning hide"{#else}"hide"{#/if}>
+            {$T.d.energy.energy}
+          </td>
+          <td class={#if ($T.d.locationWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.location.address}
+          </td>
+          <td class={#if ($T.d.picWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.pictureStatus}
+            <i class={#if ($T.d.picturePower == true)}"hive-icon-battery-right fa fa-bolt"{#else}""{#/if}></i>
+          </td>
+          <td class={#if ($T.d.netWorkWarn == true)}"hive-table-cellWarning"{#else}""{#/if}>
+            {$T.d.networkStatus}
+          </td>
+          <td>
+            <span>
+              <i class="fa"></i>
+              <a href="javascript:void(0);" class="hive-devices-switch" data-switch="{$T.d.off}">{#if ($T.d.off == true)} 开 {#else} 关 {#/if}</a>&nbsp;&nbsp;
+              <i class="fa fa-times"></i>
+              <a href="javascript:void(0);" class="hive-devices-deleteLink">删除</a>
+            </span>
+          </td>
+        </tr>
+      {#/for}
+    </textarea>
+</div>

@@ -1,0 +1,171 @@
+<% content_for :title, '站内信' %>
+<div class="page-content inbox-white">
+	<%= render "shared/page_breadcrumb", icon: 'fa-envelope-o' %>
+	<div class="row inbox">
+		<div class="col-md-2">
+			<ul class="inbox-nav margin-bottom-10">
+				<li class="compose-btn  blackgreen">
+					<a href="javascript:;" data-title="Compose" class="btn green">
+					<i class="fa fa-edit"></i>新建信息</a>
+				</li>
+				<li class="inbox active" style="margin-top:10px;">
+					<a href="javascript:;" class="btn" data-title="Inbox">
+					收件箱(<span class="hive-topBar-msgCenterTotal">0</span>)</a>
+					<b></b>
+				</li>
+				<li class="sent">
+					<a class="btn" href="javascript:;" data-title="Sent">
+					发件箱</a>
+					<b></b>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-10">
+			<div class="inbox-content">
+				<div class="inbox-newform hidden">
+					<form id="hive-inbox-createMsgForm" class="inbox-compose form-horizontal">
+						<div class="inbox-form-group mail-to">
+							<label class="control-label">发送至:</label>
+							<div class="controls controls-to">
+								<input type="text" class="form-control" name="usernames" title="请输入用户名，若要发送给多人，请以分号隔开">
+							</div>
+						</div>
+						<div class="inbox-form-group">
+							<label class="control-label">主题:</label>
+							<div class="controls">
+								<input type="text" class="form-control" name="subject">
+							</div>
+						</div>
+						<div class="inbox-form-group">
+							<textarea class="inbox-editor inbox-wysihtml5 form-control" name="message" rows="12"></textarea>
+						</div>
+						<div class="inbox-compose-btn">
+							<button class="btn blackblue" id="hive-inboxPage-createMsgSection-sendButton"><i class="fa fa-check"></i>发送</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			<table id="hive-receive-msg-table" class="table table-striped table-advance table-hover ">
+				<thead>
+					<tr>
+						<th colspan="3">
+							<input type="checkbox" class="mail-group-checkbox">
+							<div class="btn-group">
+								<a class="btn btn-sm blackblue dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+								操作 <i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="read">
+										<a href="javascript:;">
+										<i class="fa fa-pencil"></i>已读</a>
+									</li>
+									<li class="del" data-type="recieved">
+										<a href="javascript:;">
+										<i class="fa fa-ban"></i>删除</a>
+									</li>
+								</ul>
+							</div>
+							<span class="pagination-info" style="float:right;margin-top:5px;">
+								第<span class="pagenum">1</span>页 共<span class="Rmsg-total">0</span>条信息
+							</span>
+						</th>
+						<th class="pagination-control" colspan="3">
+							<a class="btn btn-sm blackblue">
+							<i class="fa fa-angle-left"></i>
+							</a>
+							<a class="btn btn-sm blackblue">
+							<i class="fa fa-angle-right"></i>
+							</a>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="hive-msg-all-list">
+				</tbody>
+			</table>
+			<table id="hive-send-msg-table" class="table table-striped table-advance table-hover hidden">
+				<thead>
+					<tr>
+						<th colspan="3">
+							<input type="checkbox" class="mail-group-checkbox">
+							<div class="btn-group">
+								<a class="btn btn-sm blackblue dropdown-toggle" href="javascript:;" data-toggle="dropdown">
+								操作 <i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="del" data-type="sent">
+										<a href="javascript:;">
+										<i class="fa fa-ban"></i>删除</a>
+									</li>
+								</ul>
+							</div>
+							<span class="pagination-info" style="float:right;margin-top:5px;">
+								第<span class="pagenum">1</span>页 共<span class="Rmsg-total">0</span>条信息
+							</span>
+						</th>
+						<th class="pagination-control" colspan="3">
+							<a class="btn btn-sm blackblue">
+							<i class="fa fa-angle-left"></i>
+							</a>
+							<a class="btn btn-sm blackblue">
+							<i class="fa fa-angle-right"></i>
+							</a>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="hive-msg-all-list">
+				</tbody>
+			</table>
+			<div class="container hive-specific-msg" style="display:none;">
+				<div class="inbox-header">
+					<h3 class="pull-left">查看信息</h3>
+				</div>
+				<div class="inbox-content">
+					<div class="inbox-header inbox-view-header">
+						<h1 class="pull-left subject"></h1>
+						<div class="row">
+							<div class="col-md-7 subject">主题:
+								<span class="bold"></span>
+							</div>
+						</div>
+
+					</div>
+					<div class="inbox-view-info">
+						<div class="row">
+							<div class="col-md-7 sendername">发件人:	
+								<span class="bold"></span>
+							</div>
+						</div>
+					</div>
+					<div class="inbox-view content">信息内容:
+						<p>	
+						</p>
+					</div>
+						<hr>
+				</div>
+			</div>
+			<textarea id="hive-msg-listItem-tmpl" style="display: none;">
+			    {#foreach $T.items as d}
+			        <tr class={#if ($T.d.recieverMessageRead == false)}"unread"{#else}""{#/if} data-messageid="{$T.d.id}">
+					<td class="inbox-small-cells">
+						<div class="checker">
+						<span>
+						<input type="checkbox" class="mail-checkbox" value="{$T.d.id}">
+						</span>
+						</div>
+					</td>
+					<td class="view-message hidden-xs">
+						 {$T.d.userName}
+					</td>
+					<td class="view-message">
+						 {$T.d.subject}
+					</td>
+					<td class="view-message inbox-small-cells">
+					</td>
+					<td class="view-message text-right">
+						 {$T.d.created}
+					</td>
+				</tr>
+			    {#/for}
+			 </textarea>
+	</div>
+</div>

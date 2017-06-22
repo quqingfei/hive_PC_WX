@@ -1,0 +1,205 @@
+<% content_for :title, '添加设备' %>
+<div class="page-content">
+  <%= render "shared/page_breadcrumb", icon: 'fa-plus' %>
+  <div class="hive-newDevice-formWrapper">
+   	<div class="hive-newDevice-formHeader">
+	   	<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 cell">
+	 			<i class="fa fa-plus"></i>
+	 			<span>设备信息输入</span>
+	 		</div>
+   		<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pull-right cell text-center">
+   			批量导入
+   		</div>
+   		<div class="hive-quick-clear"></div>
+   	</div>
+   	<form class="newDeviceForm">
+   		<div class="hive-newDevice-formBody">
+	   		<ul class="hive-newDevice-formBodyContent">
+	   			<li>
+		   			<div class="hive-newDevice-formBodyContent-formLeft">
+		   				<div class="input-icon right">
+							<i class="fa" data-toggle="tooltip" title=""></i>
+							<input type="text" class="form-control hive-newDevice-form-sn hive-newDevice-mainSn" name="mainSn" data-snType="插座" placeholder="设备序列号" />
+						</div>
+		   				<div class="input-icon right">
+							<i class="fa" data-toggle="tooltip" title=""></i>
+							<input type="text" name="deviceName" class="form-control"  placeholder="设备名称"/>
+						</div>
+						<div class="input-icon right">
+							<input type="text" name="deviceDescription" class="form-control hive-newDevice-form-description"  placeholder="备注"/>
+						</div>
+		   				<div>
+		   					<select id="hive-newDevice-select" name="deviceGroups" placeholder="无分组" class="form-control" name="select">
+					            	<option selected="selected" value="">无分组</option>
+					          	</select>
+		   				</div>
+		   				<img src="<%= asset_path("icon-12.svg") %>" class="hive-newDevice-img">
+		   			</div>
+	   			</li>
+	   			<li>
+	   				<div>
+							<i class="fa fa-question-circle"></i>
+	   				</div>
+	   			</li>
+	   			<li>
+		   			<div class="hive-newDevice-formBodyContent-formMiddle">
+		   				<div class="hive-newDevice-lineBox">
+		   					<div></div>
+		   					<div></div>
+		   					<div></div>
+		   					<div></div>
+		   				</div>
+		   			</div>
+	   			</li>
+	   			<li>
+		   			<div class="hive-newDevice-formBodyContent-formRight">
+		   				<div>
+		   					<i class="icon-icon-04"></i>
+			   				<div class="input-icon right">
+									<i class="fa" data-toggle="tooltip" title=""></i>
+									<input type="text" name="device_sub_deviceInput1" class="form-control hive-newDevice-form-sn" data-snType="温湿度蜂巢" placeholder="设备序列号"/>
+								</div>
+		   					<div class="input-icon right">
+									<input type="text" name="device_sub_deviceInput2" class="form-control hive-newDevice-form-description" placeholder="备注"/>
+								</div>
+								<div class="hive-quick-clear"></div>
+			   				<i class="fa fa-minus"></i>
+		   				</div>
+		   				<div>
+		   					<i class="icon-icon-05"></i>
+			   				<div class="input-icon right">
+									<i class="fa" data-toggle="tooltip" title=""></i>
+									<input type="text" name="device_sub_deviceInput3" class="form-control hive-newDevice-form-sn" data-snType="加速度蜂巢" placeholder="设备序列号"/>
+								</div>
+		   					<div class="input-icon right">
+									<input type="text" name="device_sub_deviceInput4" class="form-control hive-newDevice-form-description" placeholder="备注"/>
+								</div>
+								<div class="hive-quick-clear"></div>
+			   				<i class="fa fa-minus"></i>
+		   				</div>
+		   				<div>
+		   					<i class="icon-icon-06"></i>
+			   				<div class="input-icon right">
+									<i class="fa" data-toggle="tooltip" title=""></i>
+									<input type="text" name="device_sub_deviceInput5" class="form-control hive-newDevice-form-sn" data-snType="摄像头蜂巢" placeholder="设备序列号"/>
+								</div>
+			   				<div class="input-icon right">
+									<input type="text" name="device_sub_deviceInput6" class="form-control hive-newDevice-form-description" placeholder="备注"/>
+								</div>
+								<div class="hive-quick-clear"></div>
+			   				<i class="fa fa-minus"></i>
+		   				</div>
+		   				<div>
+		   					<i class="icon-icon-07"></i>
+			   				<div class="input-icon right">
+									<i class="fa" data-toggle="tooltip" title=""></i>
+									<input type="text" name="device_sub_deviceInput7" class="form-control hive-newDevice-form-sn" data-snType="红外线蜂巢" placeholder="设备序列号"/>
+								</div>
+			   				<div class="input-icon right">
+									<input type="text" name="device_sub_deviceInput8" class="form-control hive-newDevice-form-description" placeholder="备注"/>
+								</div>
+								<div class="hive-quick-clear"></div>
+			   				<i class="fa fa-minus"></i>
+		   				</div>
+		   				<div class="hive-newDevice-hide hive-newDevice-modal">
+		   					<i class="fa fa-spin fa-spinner"></i>
+		   					<div class="input-icon right">
+									<i class="fa" data-toggle="tooltip" title=""></i>
+									<input type="text" class="form-control hive-newDevice-form-sn" placeholder="设备序列号" />
+								</div>
+			   				<div class="input-icon right">
+									<input type="text" class="form-control hive-newDevice-form-description" placeholder="备注"/>
+								</div>
+								<div class="hive-quick-clear"></div>
+			   				<i class="fa fa-minus"></i>
+		   				</div>
+		   				<div>
+		   					<i class="fa fa-plus hive-newDevice-plus"></i>
+		   				</div>
+		   			</div>
+	   			</li>
+	   		</ul>
+   		<div class="hive-quick-clear"></div>
+   	</div>
+   	</form>
+ 		<div class="hive-newDevice-buttonBox">
+			<input type="button" value="保存" class="hive-newDevice-buttonSave btn yellow" />
+			<input type="button" value="取消" class="hive-newDevice-buttonCancel btn red" />
+		</div>
+  </div>
+  <div class="hive-newDevice-devices-table">
+   	<div class="table-responsive">
+   		<table class="table table-bordered table-hover">
+   			<thead>
+          <tr>
+            <th class="hive-sortable hive-selected" data-sortType="name">
+              设备名称
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="temp">
+              序列号
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="hum">
+              备注
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="shake">
+              分组
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="ray">
+              传感器
+            </th>
+            <th class="hive-sortable" data-sortType="energy">
+              添加时间
+              <i class="fa fa-angle-up hide"></i>
+              <i class="fa fa-angle-down hide"></i>
+            </th>
+            <th class="hive-sortable" data-sortType="location">
+              操作
+            </th>
+          </tr>
+        </thead>
+        <tbody id="hive-devices-tbody">
+        </tbody>
+   		</table>
+   	</div>
+ 	</div>
+	<textarea id="hive-newDevices-tmpl" style="display: none;">
+    {#foreach $T.items as d}
+      <tr data-deviceId="{$T.d.id}">
+        <td>
+          {$T.d.name}
+        </td>
+        <td>
+          {$T.d.sn}
+        </td>
+        <td>
+          {$T.d.description}
+        </td>
+        <td>
+          {$T.d.group}
+        </td>
+        <td>
+          {$T.d.device}
+        </td>
+        <td>
+          {$T.d.created_at}
+        </td>
+        <td>
+          <span>
+          	<i class="fa"></i>
+             <a href="javascript:void(0);" class="hive-devices-switch" data-switch="{$T.d.off}">{#if ($T.d.off == true)} 开 {#else} 关 {#/if}</a>
+            <i class="fa fa-times"></i>
+            <a href="javascript:void(0);" class="hive-newDevice-deleteLink">删除</a>
+          </span>
+        </td>
+      </tr>
+    {#/for}
+	</textarea>
+</div>

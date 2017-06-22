@@ -1,0 +1,14 @@
+<div class="wx-inspection" id="wx-inspection">
+	<ul data-bind="foreach: inspections">
+		<li class="clearfix wx-theme-borderColor" data-bind="css: {'error-device' : isError}">
+			<span>
+				<p data-bind="text: name"></p>
+				<p data-bind="text: address"></p>
+			</span>
+			<span class="wx-inspection-span">
+				<p data-bind="text: inspectTime"></p>
+				<p data-bind="text: inspectName"></p>
+			</span>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,19 @@
+<div class="wx-temperature" id="wx-temperature">
+    <div class="row hive-grid-row" data-bind="foreach: temperatures">
+        <div class="col-md-3 col-sm-4 col-xs-6 hive-grid-col" data-bind="click: $root.gridClick">
+            <div data-bind="css: gridColor">
+                 <div>
+                     <p class="cell-name" data-bind="text: name"></p>
+                </div>
+                 <div>
+                      <label class="cell-label cell-labelText wx-temperature-temp" data-bind="text: temp"></label>
+                      <label class="cell-label-symbol" data-bind="text: tempSysmbol"></label>
+                      <label class="cell-label cell-labelText wx-temperature-hum" data-bind="text: hum"></label>
+                      <label class="cell-label-symbol" data-bind="text: humSysmbol"></label>
+                 </div>
+            </div>
+            <i data-bind="css: battery"></i>
+        </div>
+    </div>
+</div>
+

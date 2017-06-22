@@ -1,0 +1,322 @@
+<% content_for :title, 'demo' %>
+<div class="page-content">
+    <div>
+        <div>更新关注列表</div>
+        <input type="text" placeholder="插座mac" class="form-control b6-mac"/>
+        <input type="text" placeholder="蜂巢macs 以逗号,分隔" class="form-control b6-macs"/>
+        <span></span>
+        <input type="button" value="提交" class="b6" />
+    </div>
+    <div>
+            <div>控制开关</div>
+            <input type="text" placeholder="插座mac" class="form-control b4-mac"/>
+            <div>
+                <form>
+                    <span>off:</span>
+                    开
+                    <input type="radio" value="1" name="switch" />
+                    关
+                    <input type="radio" value="0" name="switch" />
+                </form>
+            </div>
+            <input type="button" value="提交" class="b4" />
+    </div>
+    <div>
+        <div>更新上传周期</div>
+        <div>
+            <input type="text" placeholder="插座mac" class="form-control b5-mac" />
+            <input type="text" placeholder="数据间隔，单位为秒" class="form-control cha-zuo-time" />
+<!--             <select class="b5-dev-type">
+                <option value="wifi">模组：WIFI</option>
+                <option value="gprs">模组：GPRS</option>
+            </select> -->
+            <br/>
+            <input type="text" placeholder="温湿度蜂巢mac，多个mac以逗号隔开" class="form-control hum-mac" style="width: 200px" />
+            <input type="text" placeholder="数据间隔，单位为秒" class="form-control hum-time" />
+            <br/>
+            <input type="text" placeholder="加速度蜂巢，多个mac以逗号隔开" class="form-control shake-mac" style="width: 200px" />
+            <input type="text" placeholder="数据间隔，单位为秒" class="form-control shake-time" />
+            <br/>
+            <input type="text" placeholder="人流感应蜂巢，多个mac以逗号隔开" class="form-control ray-mac" style="width: 200px" />
+            <input type="text" placeholder="数据间隔，单位为秒" class="form-control ray-time" />
+            <br/>
+            <input type="text" placeholder="摄像头蜂巢，多个mac以逗号隔开" class="form-control pic-mac" style="width: 200px" />
+            <input type="text" placeholder="数据间隔，单位为秒" class="form-control pic-time" />
+        </div>
+        <input type="button" value="提交" class="b5" />
+    </div>
+    <div>
+        <div>设置温湿度蜂巢参数</div>
+        <div>
+            <input type="text" placeholder="插座mac" class="form-control b13-mac" />
+            <input type="text" placeholder="温湿度蜂巢mac" class="form-control b13-s-mac" />
+            <input type="text" placeholder="RebootTime, 单位为秒" class="form-control b13-rebootTime" />
+        </div>
+        <input type="button" value="提交" class="b13" />
+    </div>
+    <div>
+        <div>设置红外蜂巢参数</div>
+        <div>
+            <input type="text" placeholder="插座mac" class="form-control b14-mac" />
+            <input type="text" placeholder="温湿度蜂巢mac" class="form-control b14-s-mac" />
+            <input type="text" placeholder="RebootTime, 单位为秒" class="form-control b14-rebootTime" />
+        </div>
+        <input type="button" value="提交" class="b14" />
+    </div>
+    <div>
+        <div>设置加速度蜂巢参数</div>
+        <div>
+            <input type="text" placeholder="插座mac" class="form-control b11-mac" />
+            <input type="text" placeholder="加速度蜂巢mac" class="form-control b11-s-mac" />
+            <input type="text" placeholder="Threshold" class="form-control b11-threshold" />
+            <input type="text" placeholder="TimeLimit" class="form-control b11-timelimit" />
+            <input type="text" placeholder="RebootTime, 单位为秒" class="form-control b11-rebootTime" />
+        </div>
+        <input type="button" value="提交" class="b11" />
+    </div>
+    <div>
+        <div>设置摄像头蜂巢参数</div>
+        <div>
+            <input type="text" placeholder="插座mac" class="form-control b12-mac" />
+            <input type="text" placeholder="摄像头蜂巢mac" class="form-control b12-s-mac" />
+            <select class="b12-resolution form-control">
+                <option value="0">160x120</option>
+                <option value="1">320x240</option>
+                <option value="2">640x480</option>
+            </select>
+            <input type="text" placeholder="Quality" class="form-control b12-quality" />
+            <input type="text" placeholder="RebootTime, 单位为秒" class="form-control b12-rebootTime" />
+        </div>
+        <input type="button" value="提交" class="b12" />
+    </div>
+    <div>
+        <div>查询关注设备列表</div>
+        <input type="text" placeholder="插座mac" class="form-control b7-mac" />
+        <input type="button" value="查询" class="b7" />
+        <h3 class="b7-result"></h3>
+    </div>
+    <div>
+        <div>获取当前查询周期</div>
+        <input type="text" placeholder="插座mac" class="form-control b8-mac" />
+        <input type="button" value="查询" class="b8" />
+        <h3 class="b8-result"></h3>
+    </div>
+    <div>
+        <div>查询设备状态</div>
+        <input type="text" placeholder="插座mac" class="form-control b9-mac" />
+        <input type="text" style="width: 200px" placeholder="蜂巢mac, 为空则查询插座的设备状态" class="form-control b9-sub-mac" />
+        <input type="button" value="查询" class="b9" />
+        <h3 class="b9-result"></h3>
+    </div>
+    <div>
+        <div>查询蜂巢配置</div>
+        <input type="text" placeholder="插座mac" class="form-control b10-mac" />
+        <input type="text" placeholder="蜂巢mac" class="form-control b10-sub-mac" />
+        <input type="button" value="查询" class="b10" />
+        <h3 class="b10-result"></h3>
+    </div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+var _ajax = function (type, subUrl, data, success, error, context) {
+            var _options = {
+                type: type,
+                url: subUrl,
+                dataType: 'json',
+                success: success,
+                error: error,
+                data: data
+            };
+
+            if(_options.type.toUpperCase() == "GET") {
+                _options.url += ((_options.url.indexOf("?") > -1 ? "" : "?") + "&___t=" + (new Date).getTime());
+            }
+
+            if(context) {
+                _options.context =  context;
+            }
+
+            return $.ajax(_options);
+        };
+
+var _get = function (url, data, success, error, context) {
+    return _ajax("GET", url, data, success, error, context);
+};
+
+var _post = function (url, data, success, error, context) {
+    return _ajax("POST", url, data, success, error, context);  
+};
+
+$('input[type=button]').click(function () {
+    var data = new Object();
+    switch($(this).attr('class')) {
+        case 'b4':
+            data.mac = $('.b4-mac').val();
+            data.off = $('input[name="switch"]:checked').val();
+            _post("demo/update_outlet_switch_to_gizwits", data, function (res) {
+                alert(res);
+            }, function (err) {
+                console.log(err);
+            }, this);
+        break;
+        case 'b5':
+            data.mac = $('.b5-mac').val();
+            data.reporttime = $('.cha-zuo-time').val();
+            //data.dev_type = $(".b5-dev-type").val();
+            data.s_macs = [{
+                    mac: $(".hum-mac").val(),
+                    time: $(".hum-time").val(),
+                    type: 1
+                },
+                {
+                    mac: $(".shake-mac").val(),
+                    time: $(".shake-time").val(),
+                    type: 2
+                },
+                {
+                    mac: $(".ray-mac").val(),
+                    time: $(".ray-time").val(),
+                    type: 3
+                },
+                {
+                    mac: $(".pic-mac").val(),
+                    time: $(".pic-time").val(),
+                    type: 4
+                }
+            ];
+
+            _post("demo/update_device_report_time_to_gizwits", data, function (res) {
+                alert(res);
+            }, function (err) {
+                console.log(err);
+            }, this);
+        break;
+        case 'b6':
+            data.mac = $('.b6-mac').val();
+            data.macs = $('.b6-macs').val();
+            _post("demo/update_device_list", data, function (res) {
+                alert(res);
+            }, function (err) {
+                console.log(err);
+            }, this);
+        break;
+
+        case 'b7':
+            data.mac = $('.b7-mac').val();
+            _post("demo/device_list", data, function (res) {
+                if (!res.result) {
+                    $(".b7-result").text("failed");
+                } else {
+                    $(".b7-result").text(JSON.stringify(res));
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        break;
+
+        case 'b8':
+            data.mac = $('.b8-mac').val();
+            _post("demo/device_report_time", data, function (res) {
+                if (!res.result) {
+                    $(".b8-result").text("failed");
+                } else {
+                    $(".b8-result").text(JSON.stringify(res));
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        break;
+
+        case 'b9':
+            data.mac = $('.b9-mac').val();
+            data.s_mac = $(".b9-sub-mac").val();
+            _post("demo/device_status", data, function (res) {
+                if (!res.result) {
+                    $(".b9-result").text("failed");
+                } else {
+                    $(".b9-result").text(JSON.stringify(res));
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        break;
+
+        case 'b10':
+            data.mac = $('.b10-mac').val();
+            data.s_mac = $(".b10-sub-mac").val();
+            _post("demo/shake_device_setting", data, function (res) {
+                if (!res.result) {
+                    $(".b10-result").text("failed");
+                } else {
+                    $(".b10-result").text(JSON.stringify(res));
+                }
+            }, function (err) {
+                console.log(err);
+            });
+        break;
+
+        case 'b11':
+            data.mac = $(".b11-mac").val();
+            data.s_mac = $(".b11-s-mac").val();
+            data.threshold = $(".b11-threshold").val();
+            data.timeLimit = $(".b11-timelimit").val();
+            data.reboot_time = $(".b11-rebootTime").val();
+            _post("demo/shake_setting/update", data, function (res) {
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        break;
+
+        case 'b12':
+            data.mac = $(".b12-mac").val();
+            data.s_mac = $(".b12-s-mac").val();
+            data.resolution = $(".b12-resolution").val();
+            data.quality = $(".b12-quality").val();
+            data.reboot_time = $(".b12-rebootTime").val();
+            _post("demo/picture_setting/update", data, function (res) {
+                console.log(res);
+            }, function (err) {
+                console.log(err);
+            });
+        break;
+
+        case "b13":
+            data.mac = $(".b13-mac").val();
+            data.s_mac = $(".b13-s-mac").val();
+            data.reboot_time = $(".b13-rebootTime").val();
+            _post("demo/humiture_setting/update", data, function (res) {
+              console.log(res);
+            }, function (err) {
+              console.log(err);
+            });
+        break;
+
+        case "b14":
+            data.mac = $(".b14-mac").val();
+            data.s_mac = $(".b14-s-mac").val();
+            data.reboot_time = $(".b14-rebootTime").val();
+            _post("demo/ray_setting/update", data, function (res) {
+              console.log(res);
+            }, function (err) {
+              console.log(err);
+            });
+        break;
+    }
+});
+</script>
+<style type="text/css">
+    input[type=button] {
+        margin-bottom: 50px;
+        display: block;
+    }
+    input[type=radio] {
+        margin-right: 20px;
+    }
+    input{
+        margin: 10px;
+    }
+    .b14-rebootTime, .b13-rebootTime, .b12-rebootTime, .b11-rebootTime {
+      width: 150px;
+    }
+</style>

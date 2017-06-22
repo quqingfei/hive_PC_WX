@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Mac</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+          function connect() {
+          	if(!$("#mac").val()) {
+          		alert("请填写mac!");
+          	}
+
+            $.ajax({
+                type: "post",
+                url: "/demo/add_mac",
+                data: { mac: $("#mac").val(), component_type: $("#component_type").val() },
+                dataType: "json",
+                success: function (data) {  
+                	if(data.code == 1001) {
+                		alert("bad request");
+                	}
+
+                	if (data.code == 1002) {
+                		alert("Mac existed!");
+                	}
+
+                	if (data.code == 1000) {
+                		window.location.href = "/demo/add_mac_page";
+                	}
+                },
+                error: function () {
+                	alert("Failed!");
+                }
+            });
+        }
+        $(document).ready(function () {
+        	$("button").click(function () {
+        		connect();
+        	});
+        });
+    </script>
+</head>
+<body>
+	<p>请检查清楚mac的类型!</p>
+	<p>
+		Mac: <input type="text" id="mac" name="mac" />
+		<br/>
+		类型: <select id="component_type" name="component_type" >
+						<option value="1">温湿度计</option>
+						<option value="2">加速度计</option>
+						<option value="3">摄像头</option>
+						<option value="4">红感应器</option>
+						<option value="5">插座</option>
+					</select>
+		<button>添加</button>
+	</p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <span>提醒：若要查看某个mac的sn，请访问http://hive.gizwits.com/demo/devices?mac=你的mac地址。如果返回的数据里面，device_id不为空，则说明已经绑定到一个设备。</span>
+</body>
+</html>
+

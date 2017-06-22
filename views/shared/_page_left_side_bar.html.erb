@@ -1,0 +1,154 @@
+<div class="page-sidebar-wrapper">
+  <%# 
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+  %>
+  <div class="page-sidebar navbar-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <%#
+      <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+      <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+      <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+      <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+      <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+      <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+    %>
+    <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+      <%#
+        <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+        <!--     <li class="sidebar-toggler-wrapper">
+          <div class="sidebar-toggler">
+          </div>
+        </li> -->
+        <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+        <!--   <li class="sidebar-search-wrapper">
+          <form class="sidebar-search " action="extra_search.html" method="POST">
+            <a href="javascript:;" class="remove">
+            <i class="icon-close"></i>
+            </a>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+              <a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
+              </span>
+            </div>
+          </form> -->
+        %>
+        <!-- END RESPONSIVE QUICK SEARCH FORM -->
+      </li>
+      <li class="start open">
+        <a href="/" id="hive-menu-index">
+          <i class="icon-icon-01"></i>
+          <span class="title">首页</span>
+          <span class="selected"></span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <i class="icon-icon-02"></i>
+          <span class="title">设备列表</span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="/devices" id="hive-menu-devices">全部设备</a>
+          </li>
+          <li>
+            <a href="/devices?is=offline" id="hive-menu-devices-offline">异常设备</a>
+          </li>
+          <li>
+            <a href="/devices?is=new" id="hive-menu-devices-new">新增设备</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/map" id="hive-menu-map">
+          <i class="icon-icon-03"></i>
+          <span class="title">地理位置</span>
+        </a>
+      </li>
+      <li>
+        <a href="/humiture" id="hive-menu-humiture">
+          <i class="icon-icon-04"></i>
+          <span class="title">温湿度</span>
+          <span class="h-menu-alarm hide pull-right">0</span>
+        </a>
+      </li>
+      <li>
+        <a href="/shake" id="hive-menu-shake">
+          <i class="icon-icon-05"></i>
+          <span class="title">震动感应</span>
+          <span class="h-menu-alarm hide pull-right">0</span>
+        </a>
+      </li>
+      <li>
+        <a href="/picture" id="hive-menu-picture">
+          <i class="icon-icon-06"></i>
+          <span class="title">影像</span>
+          <span class="h-menu-alarm hide pull-right">0</span>
+        </a>
+      </li>
+      <li class="hidden">
+        <a href="/energy" id="hive-menu-energy">
+          <i class="icon-icon-08"></i>
+          <span class="title">能耗</span>
+          <span class="h-menu-alarm hide pull-right">0</span>
+        </a>
+      </li>
+      <li>
+        <a href="/ray" id="hive-menu-infrared_ray">
+          <i class="icon-icon-07"></i>
+          <span class="title">人流感应</span>
+          <span class="h-menu-alarm hide pull-right">0</span>
+        </a>
+      </li>
+      <li>
+        <a href="/inspection" id="hive-menu-inspection">
+          <i class="icon-icon-09"></i>
+          <span class="title">巡检记录</span>
+        </a>
+      </li>
+<!--       <li>
+        <a href="/calendar" id="hive-menu-calendar">
+          <i class="icon-calendar"></i>
+          <span class="title">日历</span>
+        </a>
+      </li> -->
+      <li id="hive-menu-devicesGroup">
+        <a href="javascript:;">
+          <i class="icon-icon-10"></i>
+          <span class="title">设备分组</span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="/group" id="hive-menu-devicesGroup-all">分组信息</a>
+          </li>
+        </ul>
+      </li>
+      <li class="hive-menu-sub-menu">
+        <a href="/user_center">
+          <i class="icon-user"></i>
+          <span class="title">个人信息修改</span>
+        </a>
+      </li>
+      <li class="hive-menu-sub-menu">
+        <a href="/message">
+          <i class="fa fa-envelope"></i>
+          <span class="title">站内信</span>
+        </a>
+      </li>
+      <li class="hive-menu-sub-menu">
+        <a href="/settings">
+          <i class="fa fa-gear"></i>
+          <span class="title">设置</span>
+        </a>
+      </li>
+      <li class="hive-menu-sub-menu">
+        <a href="/users/sign_out">
+          <i class="fa fa-sign-out"></i>
+          <span class="title">退出</span>
+        </a>
+      </li>
+    </ul>
+    <!-- END SIDEBAR MENU -->
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="wx-deviceChart" id="wx-deviceChart">
+	<div class="wx-deviceChart-header clearfix">
+		<label class="header-title" data-bind="text: title">温度曲线(°C)</label>
+		<label class="header-time" data-bind="text: time"></label>
+		<i class="fa fa-caret-up" data-bind="click: changeChart"></i>
+		<label class="header-toggle" data-bind="click: changeChart">每日</label>
+	</div>
+	<div id="wx-chart" data-bind="css: {'hidden': ifImage() || ifMap()}">
+		<a href="#">详情</a>
+	</div>
+	<div class="deviceChart-info" data-bind="css: {'hidden': ifImage() || ifMap()}">
+		<div class="max-block">
+			<label data-bind="text: maxName">最高温度</label>
+			<label data-bind="text: maxTime">23:00</label>
+			<label data-bind="text: maxNum">32</label>
+		</div>
+		<div class="min-block">
+			<label data-bind="text: minName">最低温度</label>
+			<label data-bind="text: minTime">07:00</label>
+			<label data-bind="text: minNum">-6</label>
+		</div>
+		<div class="average-block">
+			<label data-bind="text: averageName">平均温度</label>
+			<label data-bind="text: averageTime">2015/9/7</label>
+			<label data-bind="text: averageNum">2</label>
+		</div>
+	</div>
+	<div class="deviceChart-image" data-bind="css: {'hidden': !ifImage()}">
+		<div class="row hive-grid-row" data-bind="foreach: images">
+        <div class="col-md-3 col-sm-4 col-xs-6 hive-grid-col">
+            <img class="hive-picture-cell" data-bind="attr: { src: $data }, click: $root.imageClick" />
+        </div>
+    </div>
+	</div>
+	<div class="deviceChart-map" data-bind="css: {'hidden': !ifMap()}" id="deviceChart-map">
+		
+	</div>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#bg-modal" style="display:none;" id="bg-modal-btn">
+  </button>
+  <div class="modal fade" id="bg-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fa fa-times" data-dismiss="modal" aria-label="Close"></i>
+        </div>
+        <div class="modal-body">
+          <img />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

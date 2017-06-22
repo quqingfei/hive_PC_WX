@@ -1,0 +1,41 @@
+<% title "注册" %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { :class => "register-form"}) do |f| %>
+    <h3>注册</h3>
+    <div class="alert alert-danger <%= flash[:sign_up_alert] ? '' : 'display-hide' %>">
+      <button class="close" data-close="alert"></button>
+      <span>
+        <%= flash[:sign_up_alert] %>
+      </span>
+    </div>
+    <p class="hint">
+       请输入你的个人信息:
+    </p>
+    <div class="form-group">
+      <%= f.label :username, "用户名", class: "control-label visible-ie8 visible-ie9" %>
+      <%= f.text_field :username, autofocus: true, class: "form-control placeholder-no-fix", placeholder: "用户名" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, "密码", class: "control-label visible-ie8 visible-ie9s" %>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control placeholder-no-fix", placeholder: "密码" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, "再次输入密码", class: "control-label visible-ie8 visible-ie9" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control placeholder-no-fix", placeholder: "再次输入密码" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :full_name, "用户姓名（可选）", class: "control-label visible-ie8 visible-ie9" %>
+      <%= f.text_field :full_name, class: "form-control placeholder-no-fix", placeholder: "用户姓名（可选）" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone, "手机号码（可选）", class: "control-label visible-ie8 visible-ie9" %>
+      <%= f.text_field :phone, class: "form-control placeholder-no-fix", placeholder: "手机号码（可选）" %>
+    </div>
+    <div class="form-actions">
+      <button type="button" id="register-back-btn" class="btn btn-default">返回登录</button>
+      <%= f.submit "注册", class: "btn btn-success uppercase pull-right" %>
+    </div>
+ <% end %>
+
+
+
+

@@ -1,0 +1,88 @@
+<div class="wx-settings" id="wx-settings">
+	<form id="wx-settingsForm">
+		<div class="wx-settings-theme clearfix">
+			<p>主题</p>
+			<span data-themeType="blue"></span>
+			<span data-themeType="pink"></span>
+			<span data-themeType="green"></span>
+			<span data-themeType="default"></span>
+			<span data-themeType="purple"></span>
+		</div>
+		<div class="wx-settings-energy hidden">
+			<p>报警阀值-能耗</p>
+			<input type="text" placeholder="低于:   (kw.h)" name="min_energy" data-bind="value:min_energy" class="form-control" />
+			<input type="text" placeholder="高于:   (kw.h)" name="max_energy" data-bind="value:max_energy" class="form-control" />
+		</div>
+		<div class="wx-settings-temp">
+			<p>报警阀值-温度</p>
+			<input type="text" placeholder="低于:   (℃)" name="min_temperature" data-bind="value:min_temperature" class="form-control" />
+			<input type="text" placeholder="高于:   (℃)" name="max_temperature" data-bind="value:max_temperature" class="form-control" />
+		</div>
+		<div class="wx-settings-hum">
+			<p>报警阀值-湿度</p>
+			<input type="text" placeholder="低于:   (%)" name="min_humidity" data-bind="value:min_humidity" class="form-control" />
+			<input type="text" placeholder="高于:   (%)" name="max_humidity" data-bind="value:max_humidity" class="form-control" />
+		</div>
+		<div class="wx-settings-shake">
+			<p>报警阀值-震动</p>
+			<input type="text" placeholder="低于:   (次)" name="min_shake" data-bind="value:min_shake" class="form-control" />
+			<input type="text" placeholder="高于:   (次)" name="max_shake" data-bind="value:max_shake" class="form-control" />
+		</div>
+		<div class="wx-settings-location">
+			<p>报警阀值-位置</p>
+			<input type="text" placeholder="半径:   (百米)" name="radius" data-bind="value:radius" class="form-control" />
+		</div>
+		<div class="wx-settings-ray">
+			<p>报警阀值-人流</p>
+			<input type="text" placeholder="低于:   (人)" name="ray" data-bind="value:ray" class="form-control" />
+		</div>
+		<div class="wx-settings-noDataTime">
+			<p>报警阀值-无数据时间</p>
+			<input type="text" placeholder="高于:   (小时)" name="max_no_data_time" data-bind="value:max_no_data_time" class="form-control" />
+		</div>
+		<div class="wx-settings-tempGap">
+			<p>数据间隔-温湿度</p>
+			<select name="humiture_max_upload_time" class="form-control" data-bind="value:humiture_max_upload_time">
+				<option value="0.5">0.5h</option>
+				<option value="1">1h</option>
+				<option value="2">2h</option>
+				<option value="6">6h</option>
+				<option value="12">12h</option>
+				<option value="24">24h</option>
+			</select>
+		</div>
+		<div class="wx-settings-shakeGap">
+			<p>数据间隔-震动</p>
+			<select name="shake_max_upload_time" class="form-control" data-bind="value:shake_max_upload_time">
+				<option value="0.5">0.5h</option>
+				<option value="1">1h</option>
+				<option value="2">2h</option>
+				<option value="6">6h</option>
+				<option value="12">12h</option>
+				<option value="24">24h</option>
+			</select>
+		</div>
+		<div class="wx-settings-imageGap">
+			<p>数据间隔-图片</p>
+			<select name="picture_max_upload_time" class="form-control" data-bind="value:picture_max_upload_time">
+				<option value="0.5">0.5h</option>
+				<option value="1">1h</option>
+				<option value="2">2h</option>
+				<option value="6">6h</option>
+				<option value="12">12h</option>
+				<option value="24">24h</option>
+			</select>
+		</div>
+		<div class="wx-settings-rayGap">
+			<p>数据间隔-人流</p>
+			<select name="infrared_max_upload_time" class="form-control" data-bind="value:infrared_max_upload_time">
+				<option value="0.5">0.5h</option>
+				<option value="1">1h</option>
+				<option value="2">2h</option>
+				<option value="6">6h</option>
+				<option value="12">12h</option>
+				<option value="24">24h</option>
+			</select>
+		</div>
+	</form>
+</div>
